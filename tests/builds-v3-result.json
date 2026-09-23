@@ -1,0 +1,136 @@
+{
+	"checks": 18,
+	"failures": [],
+	"method": "30 second firing range; stationary targets, scheduled supplies and aid inputs; no claim about survival difficulty",
+	"trials": [
+		{
+			"bounded_pending": 0,
+			"damage": 12035.9904,
+			"gear": [
+				"battery",
+				"coil"
+			],
+			"kills": 9,
+			"mods": [
+				"chain_1",
+				"chain_2",
+				"water_2"
+			],
+			"name": "water_electric",
+			"trigger_cooldowns": [
+				"battery",
+				"coil"
+			]
+		},
+		{
+			"bounded_pending": 0,
+			"damage": 21600.0,
+			"gear": [
+				"filter",
+				"valve",
+				"thermos"
+			],
+			"kills": 36,
+			"mods": [
+				"acid_2",
+				"chainsaw_1",
+				"chainsaw_2"
+			],
+			"name": "corrosion_melee",
+			"trigger_cooldowns": [
+				"thermos",
+				"filter",
+				"valve",
+				"saw_kill_ally1"
+			]
+		},
+		{
+			"bounded_pending": 0,
+			"damage": 21501.2,
+			"gear": [
+				"oil",
+				"resonator",
+				"fuse"
+			],
+			"kills": 35,
+			"mods": [
+				"molotov_1",
+				"decoy_2",
+				"brick_1"
+			],
+			"name": "lure_fire",
+			"trigger_cooldowns": [
+				"fuse",
+				"oil"
+			]
+		},
+		{
+			"bounded_pending": 0,
+			"damage": 11644.0664,
+			"gear": [
+				"magnet",
+				"flywheel",
+				"medbox",
+				"battery"
+			],
+			"kills": 7,
+			"mods": [
+				"pickup_echo",
+				"move_charge",
+				"pistol_2",
+				"brick_2"
+			],
+			"name": "recovery_movement",
+			"trigger_cooldowns": [
+				"battery",
+				"magnet"
+			]
+		},
+		{
+			"bounded_pending": 0,
+			"damage": 21600.0,
+			"gear": [
+				"coil",
+				"coolant",
+				"filter",
+				"valve"
+			],
+			"kills": 36,
+			"mods": [
+				"water_1",
+				"acid_2",
+				"chain_1",
+				"chainsaw_1"
+			],
+			"name": "mixed_water_acid",
+			"trigger_cooldowns": [
+				"coolant",
+				"coil",
+				"filter",
+				"valve"
+			]
+		},
+		{
+			"bounded_pending": 0,
+			"damage": 19782.55,
+			"gear": [
+				"fuse",
+				"resonator",
+				"magnet",
+				"medbox"
+			],
+			"kills": 25,
+			"mods": [
+				"molotov_2",
+				"decoy_2",
+				"pistol_2",
+				"pickup_echo"
+			],
+			"name": "mixed_fire_recovery",
+			"trigger_cooldowns": [
+				"fuse",
+				"magnet"
+			]
+		}
+	]
+}

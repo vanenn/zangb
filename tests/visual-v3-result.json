@@ -1,0 +1,24 @@
+{
+	"issues": [],
+	"screenshots": [
+		"res://tests/01-title.png",
+		"res://tests/02-classes.png",
+		"res://tests/03-camp.png",
+		"res://tests/04-battle-teacher.png",
+		"res://tests/04-battle-mechanic.png",
+		"res://tests/04-battle-guard.png",
+		"res://tests/05-upgrade.png",
+		"res://tests/14-equipment.png",
+		"res://tests/15-replacement.png",
+		"res://tests/16-build.png",
+		"res://tests/06-roster.png",
+		"res://tests/11-roster-new.png",
+		"res://tests/10-team-new.png",
+		"res://tests/13-boss-telegraph.png",
+		"res://tests/07-settings.png",
+		"res://tests/08-result.png",
+		"res://tests/09-codex.png",
+		"res://tests/12-codex-new.png",
+		"res://tests/17-build-codex.png"
+	]
+}

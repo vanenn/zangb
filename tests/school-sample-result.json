@@ -1,0 +1,21 @@
+{
+  "checks": 68,
+  "failures": [],
+  "routes": [
+    {
+      "id": "direct",
+      "length_px": 2861.0,
+      "walk_seconds_without_encounters": 13.0
+    },
+    {
+      "id": "rescue",
+      "length_px": 3676.0,
+      "walk_seconds_without_encounters": 16.7
+    },
+    {
+      "id": "supply",
+      "length_px": 3240.0,
+      "walk_seconds_without_encounters": 14.7
+    }
+  ]
+}

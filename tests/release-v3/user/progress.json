@@ -1,0 +1,58 @@
+{
+	"best_kills": 0,
+	"best_team": 2,
+	"best_wave": 2,
+	"difficulties": {
+		"challenge": {
+			"runs": 1,
+			"wins": 0
+		},
+		"easy": {
+			"runs": 0,
+			"wins": 0
+		}
+	},
+	"finished_ids": [
+		"mechanic-1789917939.923-78146127"
+	],
+	"history": [
+		{
+			"class": "mechanic",
+			"date": "2026-09-20",
+			"difficulty": "challenge",
+			"equipment": [
+				"battery",
+				"thermos",
+				"flywheel",
+				"medbox"
+			],
+			"kills": 0,
+			"mods": [
+				"chain_1"
+			],
+			"team": 2,
+			"wave": 2,
+			"win": false
+		}
+	],
+	"runs": 1,
+	"seen": [
+		"shambler"
+	],
+	"unlocked": [
+		"chemist",
+		"repairer",
+		"officer",
+		"nurse",
+		"chef",
+		"courier",
+		"electrician",
+		"chemical_worker",
+		"firefighter",
+		"hunter",
+		"sound_tech",
+		"sanitation"
+	],
+	"version": 3,
+	"wins": 0
+}

@@ -1,0 +1,55 @@
+[
+	{
+		"class": "teacher",
+		"completed": false,
+		"elapsed_wall_seconds": 36.069,
+		"fixed_step": 0.0333333333333333,
+		"god_mode": false,
+		"waves": [
+			{
+				"health": 100.0,
+				"kills": 46,
+				"level": 4,
+				"remaining": 0,
+				"rescued": 1,
+				"seconds": 69.5,
+				"supplies": 87,
+				"team": 3,
+				"wave": 1
+			},
+			{
+				"health": 115.0,
+				"kills": 115,
+				"level": 7,
+				"remaining": 0,
+				"rescued": 2,
+				"seconds": 70.0,
+				"supplies": 102,
+				"team": 6,
+				"wave": 2
+			},
+			{
+				"health": 115.0,
+				"kills": 211,
+				"level": 10,
+				"remaining": 0,
+				"rescued": 3,
+				"seconds": 85.1,
+				"supplies": 179,
+				"team": 9,
+				"wave": 3
+			},
+			{
+				"health": 115.0,
+				"kills": 286,
+				"level": 10,
+				"remaining": 54,
+				"rescued": 4,
+				"seconds": 240.0,
+				"supplies": 80,
+				"team": 12,
+				"wave": 4
+			}
+		]
+	}
+]

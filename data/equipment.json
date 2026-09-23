@@ -1,0 +1,154 @@
+[
+  {
+    "id": "battery",
+    "name": "回收电池",
+    "text": "每拾取8物资，向附近目标释放电弧",
+    "requires": [],
+    "tags": [
+      "pickup",
+      "electric"
+    ],
+    "clip": "lightning"
+  },
+  {
+    "id": "coil",
+    "name": "并联线圈",
+    "text": "电击湿润目标时追加一次导电",
+    "requires": [
+      "electric",
+      "wet"
+    ],
+    "tags": [
+      "electric",
+      "wet"
+    ],
+    "clip": "lightning"
+  },
+  {
+    "id": "coolant",
+    "name": "冷却循环罐",
+    "text": "水流命中使附近电锯散热",
+    "requires": [
+      "wet",
+      "chainsaw"
+    ],
+    "tags": [
+      "wet",
+      "melee"
+    ],
+    "clip": "water_loop"
+  },
+  {
+    "id": "filter",
+    "name": "腐蚀滤网",
+    "text": "近战命中腐蚀目标获得护盾",
+    "requires": [
+      "melee",
+      "acid"
+    ],
+    "tags": [
+      "acid",
+      "melee"
+    ],
+    "clip": "armor_hit"
+  },
+  {
+    "id": "valve",
+    "name": "压力阀",
+    "text": "电锯过热喷出强酸",
+    "requires": [
+      "chainsaw"
+    ],
+    "tags": [
+      "acid",
+      "melee"
+    ],
+    "clip": "acid_spray"
+  },
+  {
+    "id": "thermos",
+    "name": "急救保温箱",
+    "text": "溢出治疗的50%转化为护盾",
+    "requires": [
+      "healing"
+    ],
+    "tags": [
+      "healing"
+    ],
+    "clip": "water_loop"
+  },
+  {
+    "id": "oil",
+    "name": "废油滤芯",
+    "text": "燃烧中的敌人死亡后留下余火",
+    "requires": [
+      "fire"
+    ],
+    "tags": [
+      "fire"
+    ],
+    "clip": "fire_burst"
+  },
+  {
+    "id": "resonator",
+    "name": "共振扩音器",
+    "text": "声波使目标受到的火焰与酸伤提高30%，持续3秒",
+    "requires": [
+      "sonic"
+    ],
+    "tags": [
+      "sonic",
+      "fire",
+      "acid"
+    ],
+    "clip": "sonic"
+  },
+  {
+    "id": "fuse",
+    "name": "延时引信",
+    "text": "砖块命中燃烧目标产生爆燃",
+    "requires": [
+      "brick",
+      "fire"
+    ],
+    "tags": [
+      "fire",
+      "physical"
+    ],
+    "clip": "explosion"
+  },
+  {
+    "id": "magnet",
+    "name": "磁吸背带",
+    "text": "每拾取10物资释放一次拾取波",
+    "requires": [],
+    "tags": [
+      "pickup"
+    ],
+    "clip": "paper_hit"
+  },
+  {
+    "id": "flywheel",
+    "name": "动能飞轮",
+    "text": "移动4秒后下次队长攻击附加冲击",
+    "requires": [],
+    "tags": [
+      "movement",
+      "physical"
+    ],
+    "clip": "wrench"
+  },
+  {
+    "id": "medbox",
+    "name": "应急分装盒",
+    "text": "使用急救包后下次攻击发出击退脉冲",
+    "requires": [
+      "healing"
+    ],
+    "tags": [
+      "healing",
+      "physical"
+    ],
+    "clip": "sonic"
+  }
+]

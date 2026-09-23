@@ -1,0 +1,26 @@
+{
+	"automatic_attack_hp": 868.0,
+	"checks": [
+		"difficulty",
+		"recruit",
+		"move",
+		"attack",
+		"pause",
+		"reroll",
+		"mod",
+		"E scavenge",
+		"gear replacement",
+		"save/load",
+		"defeat",
+		"restart"
+	],
+	"classes": 3,
+	"equipment": 12,
+	"executable": "C:/Users/requiem/thinking/greycity-survivors/dist/GreycitySurvivors-v3-Windows/GreycitySurvivors.exe",
+	"issues": [],
+	"mods": 36,
+	"movement_pixels": 184.998779296875,
+	"renderer": "Windows",
+	"survivors": 12,
+	"weapons": 15
+}

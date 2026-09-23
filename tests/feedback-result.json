@@ -1,0 +1,114 @@
+{
+	"audio": [
+		{
+			"id": "paper_hit",
+			"peak": 6137,
+			"rms": 919.207369186465,
+			"samples": 3748
+		},
+		{
+			"id": "heavy_hit",
+			"peak": 15091,
+			"rms": 2172.30512855859,
+			"samples": 7497
+		},
+		{
+			"id": "baton_hit",
+			"peak": 7139,
+			"rms": 1286.37834173902,
+			"samples": 3528
+		},
+		{
+			"id": "fire_hit",
+			"peak": 10189,
+			"rms": 1649.70666795363,
+			"samples": 4851
+		},
+		{
+			"id": "nail_hit",
+			"peak": 7004,
+			"rms": 1193.15951542604,
+			"samples": 2646
+		},
+		{
+			"id": "shotgun_hit",
+			"peak": 11587,
+			"rms": 1837.21347385445,
+			"samples": 5512
+		},
+		{
+			"id": "pistol_hit",
+			"peak": 8473,
+			"rms": 1274.33283840039,
+			"samples": 3087
+		},
+		{
+			"id": "slice_hit",
+			"peak": 11331,
+			"rms": 1355.07725026842,
+			"samples": 4410
+		},
+		{
+			"id": "stone_hit",
+			"peak": 13642,
+			"rms": 1756.3781059601,
+			"samples": 6615
+		},
+		{
+			"id": "electric_hit",
+			"peak": 13823,
+			"rms": 2063.71663191306,
+			"samples": 4189
+		},
+		{
+			"id": "acid_hit",
+			"peak": 9545,
+			"rms": 1624.90548662376,
+			"samples": 6174
+		},
+		{
+			"id": "saw_hit",
+			"peak": 13139,
+			"rms": 2366.71788666323,
+			"samples": 3969
+		},
+		{
+			"id": "bolt_hit",
+			"peak": 12338,
+			"rms": 1609.30681658144,
+			"samples": 5071
+		},
+		{
+			"id": "pulse_hit",
+			"peak": 13215,
+			"rms": 3433.44306180907,
+			"samples": 11025
+		},
+		{
+			"id": "water_hit",
+			"peak": 13006,
+			"rms": 2555.7015644421,
+			"samples": 5071
+		},
+		{
+			"id": "armor_hit",
+			"peak": 8975,
+			"rms": 1405.45486341307,
+			"samples": 6615
+		},
+		{
+			"id": "step",
+			"peak": 7767,
+			"rms": 1732.51153216084,
+			"samples": 2205
+		},
+		{
+			"id": "splash_step",
+			"peak": 13333,
+			"rms": 2385.96991169234,
+			"samples": 3528
+		}
+	],
+	"checks": 332,
+	"failures": []
+}

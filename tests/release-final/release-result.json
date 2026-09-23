@@ -1,0 +1,11 @@
+{
+	"automatic_attack_hp": 820.0,
+	"classes": 3,
+	"executable": "C:/Users/requiem/thinking/greycity-survivors/dist/GreycitySurvivors-v2-Windows/GreycitySurvivors.exe",
+	"issues": [],
+	"movement_pixels": 184.998779296875,
+	"pause_resume": true,
+	"renderer": "Windows",
+	"survivors": 12,
+	"weapons": 15
+}

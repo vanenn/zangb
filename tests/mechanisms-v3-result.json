@@ -1,0 +1,726 @@
+{
+	"checks": 84,
+	"failures": [],
+	"weapon_comparisons": {
+		"acid_1": {
+			"after": {
+				"aid": 0,
+				"damage": 389.5,
+				"effects": 12,
+				"fields": 4,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 342.0,
+				"effects": 12,
+				"fields": 4,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"acid_2": {
+			"after": {
+				"aid": 0,
+				"damage": 446.5,
+				"effects": 12,
+				"fields": 8,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 342.0,
+				"effects": 12,
+				"fields": 4,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"baton_1": {
+			"after": {
+				"aid": 0,
+				"damage": 432.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 384.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"baton_2": {
+			"after": {
+				"aid": 0,
+				"damage": 432.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 4,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 384.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"book_1": {
+			"after": {
+				"aid": 0,
+				"damage": 704.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 140,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 352.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 168,
+				"shield": 0.0
+			}
+		},
+		"book_2": {
+			"after": {
+				"aid": 0,
+				"damage": 396.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 400,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 352.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 168,
+				"shield": 0.0
+			}
+		},
+		"brick_1": {
+			"after": {
+				"aid": 0,
+				"damage": 287.5,
+				"effects": 3,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 93,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 150.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 40,
+				"shield": 0.0
+			}
+		},
+		"brick_2": {
+			"after": {
+				"aid": 0,
+				"damage": 150.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": true,
+				"pending": 0,
+				"projectiles": 40,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 150.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 40,
+				"shield": 0.0
+			}
+		},
+		"chain_1": {
+			"after": {
+				"aid": 0,
+				"damage": 314.726,
+				"effects": 20,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 229.286,
+				"effects": 12,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"chain_2": {
+			"after": {
+				"aid": 0,
+				"damage": 373.286,
+				"effects": 12,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 229.286,
+				"effects": 12,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"chainsaw_1": {
+			"after": {
+				"aid": 0,
+				"damage": 600.0,
+				"effects": 32,
+				"fields": 0,
+				"heat": 19.189,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 576.0,
+				"effects": 32,
+				"fields": 0,
+				"heat": 19.189,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"chainsaw_2": {
+			"after": {
+				"aid": 0,
+				"damage": 10096.0,
+				"effects": 23,
+				"fields": 0,
+				"heat": 11.2942,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 10096.0,
+				"effects": 22,
+				"fields": 0,
+				"heat": 6.25526666666667,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"cleaver_1": {
+			"after": {
+				"aid": 0,
+				"damage": 408.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 2,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 384.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"cleaver_2": {
+			"after": {
+				"aid": 0,
+				"damage": 10156.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 7.00999999999999,
+				"magnet": false,
+				"pending": 1,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 10144.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 7.00999999999999,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"crossbow_1": {
+			"after": {
+				"aid": 0,
+				"damage": 1040.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 4,
+				"projectiles": 308,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 780.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 4,
+				"projectiles": 31,
+				"shield": 0.0
+			}
+		},
+		"crossbow_2": {
+			"after": {
+				"aid": 0,
+				"damage": 1560.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 10,
+				"projectiles": 73,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 780.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 4,
+				"projectiles": 31,
+				"shield": 0.0
+			}
+		},
+		"decoy_1": {
+			"after": {
+				"aid": 0,
+				"damage": 210.0,
+				"effects": 0,
+				"fields": 4,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 40,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 140.0,
+				"effects": 0,
+				"fields": 4,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 40,
+				"shield": 0.0
+			}
+		},
+		"decoy_2": {
+			"after": {
+				"aid": 0,
+				"damage": 259.0,
+				"effects": 0,
+				"fields": 4,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 40,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 140.0,
+				"effects": 0,
+				"fields": 4,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 40,
+				"shield": 0.0
+			}
+		},
+		"molotov_1": {
+			"after": {
+				"aid": 0,
+				"damage": 385.0,
+				"effects": 0,
+				"fields": 12,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 48,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 231.0,
+				"effects": 0,
+				"fields": 4,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 48,
+				"shield": 0.0
+			}
+		},
+		"molotov_2": {
+			"after": {
+				"aid": 0,
+				"damage": 231.0,
+				"effects": 0,
+				"fields": 7,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 82,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 231.0,
+				"effects": 0,
+				"fields": 4,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 48,
+				"shield": 0.0
+			}
+		},
+		"nailgun_1": {
+			"after": {
+				"aid": 0,
+				"damage": 156.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 53,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 104.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 32,
+				"shield": 0.0
+			}
+		},
+		"nailgun_2": {
+			"after": {
+				"aid": 0,
+				"damage": 130.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 259,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 104.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 32,
+				"shield": 0.0
+			}
+		},
+		"pistol_1": {
+			"after": {
+				"aid": 0,
+				"damage": 90.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 4,
+				"projectiles": 24,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 60.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 16,
+				"shield": 0.0
+			}
+		},
+		"pistol_2": {
+			"after": {
+				"aid": 1,
+				"damage": 60.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 16,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 60.0,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 16,
+				"shield": 0.0
+			}
+		},
+		"shotgun_1": {
+			"after": {
+				"aid": 0,
+				"damage": 558.409,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 54,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 195.749,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 375,
+				"shield": 0.0
+			}
+		},
+		"shotgun_2": {
+			"after": {
+				"aid": 0,
+				"damage": 249.964,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 625,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 195.749,
+				"effects": 0,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 375,
+				"shield": 0.0
+			}
+		},
+		"water_1": {
+			"after": {
+				"aid": 0,
+				"damage": 220.0,
+				"effects": 32,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 220.0,
+				"effects": 16,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"water_2": {
+			"after": {
+				"aid": 0,
+				"damage": 234.0,
+				"effects": 19,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 220.0,
+				"effects": 16,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 0,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"wrench_1": {
+			"after": {
+				"aid": 0,
+				"damage": 516.0,
+				"effects": 7,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 4,
+				"projectiles": 0,
+				"shield": 0.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 336.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 4,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		},
+		"wrench_2": {
+			"after": {
+				"aid": 0,
+				"damage": 336.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 4,
+				"projectiles": 0,
+				"shield": 8.0
+			},
+			"before": {
+				"aid": 0,
+				"damage": 336.0,
+				"effects": 4,
+				"fields": 0,
+				"heat": 0.0,
+				"magnet": false,
+				"pending": 4,
+				"projectiles": 0,
+				"shield": 0.0
+			}
+		}
+	}
+}

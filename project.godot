@@ -1,0 +1,27 @@
+config_version=5
+
+[application]
+config/name="灰城余生"
+config/description="带他们活过这一夜。十波尸潮，一座城市，越来越多的同行者。"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/use_custom_user_dir=true
+config/custom_user_dir_name="GreycitySurvivors"
+
+[display]
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/size/min_width=960
+window/size/min_height=540
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+environment/defaults/default_clear_color=Color(0.055,0.068,0.065,1)
+
+[audio]
+driver/enable_input=false

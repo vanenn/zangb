@@ -1,0 +1,368 @@
+[
+  {
+    "id": "book_1",
+    "weapon": "book",
+    "name": "回程点名",
+    "text": "回程再次命中",
+    "tags": [
+      "physical"
+    ],
+    "clip": "paper_hit"
+  },
+  {
+    "id": "book_2",
+    "weapon": "book",
+    "name": "侧旋书页",
+    "text": "同时投出一本侧旋书，造成50%伤害",
+    "tags": [
+      "physical"
+    ],
+    "clip": "paper_hit"
+  },
+  {
+    "id": "wrench_1",
+    "weapon": "wrench",
+    "name": "震地重击",
+    "text": "重击追加前方冲击波",
+    "tags": [
+      "melee"
+    ],
+    "clip": "wrench"
+  },
+  {
+    "id": "wrench_2",
+    "weapon": "wrench",
+    "name": "防守反击",
+    "text": "重击命中获得8点护盾，持续3秒；全队冷却4秒",
+    "tags": [
+      "melee"
+    ],
+    "clip": "wrench"
+  },
+  {
+    "id": "baton_1",
+    "weapon": "baton",
+    "name": "震慑节奏",
+    "text": "每第三击发出眩晕脉冲",
+    "tags": [
+      "melee"
+    ],
+    "clip": "baton"
+  },
+  {
+    "id": "baton_2",
+    "weapon": "baton",
+    "name": "前后照应",
+    "text": "攻击追加身后连击",
+    "tags": [
+      "melee"
+    ],
+    "clip": "baton"
+  },
+  {
+    "id": "molotov_1",
+    "weapon": "molotov",
+    "name": "火线封锁",
+    "text": "落点沿投掷方向铺开三段火区；新增火区持续3秒",
+    "tags": [
+      "fire"
+    ],
+    "clip": "fire_burst"
+  },
+  {
+    "id": "molotov_2",
+    "weapon": "molotov",
+    "name": "交叉投掷",
+    "text": "每第二次投掷追加侧投火瓶",
+    "tags": [
+      "fire"
+    ],
+    "clip": "fire_burst"
+  },
+  {
+    "id": "nailgun_1",
+    "weapon": "nailgun",
+    "name": "折射长钉",
+    "text": "首个命中后折射另一目标",
+    "tags": [
+      "physical"
+    ],
+    "clip": "nail_hit"
+  },
+  {
+    "id": "nailgun_2",
+    "weapon": "nailgun",
+    "name": "碎钉散射",
+    "text": "贯穿耗尽时散出三枚短钉",
+    "tags": [
+      "physical"
+    ],
+    "clip": "nail_hit"
+  },
+  {
+    "id": "shotgun_1",
+    "weapon": "shotgun",
+    "name": "独头贯穿",
+    "text": "五颗霰弹变成一枚独头弹：3.5倍单颗伤害，贯穿3人",
+    "tags": [
+      "physical"
+    ],
+    "clip": "shotgun_hit"
+  },
+  {
+    "id": "shotgun_2",
+    "weapon": "shotgun",
+    "name": "背后开火",
+    "text": "开火时向身后补射三颗霰弹",
+    "tags": [
+      "physical"
+    ],
+    "clip": "shotgun_hit"
+  },
+  {
+    "id": "pistol_1",
+    "weapon": "pistol",
+    "name": "双重点射",
+    "text": "每轮发射两次精准点射",
+    "tags": [
+      "physical",
+      "healing"
+    ],
+    "clip": "pistol_hit"
+  },
+  {
+    "id": "pistol_2",
+    "weapon": "pistol",
+    "name": "急救弹匣",
+    "text": "每四轮射击落下回复4生命的急救包；每人间隔至少4秒",
+    "tags": [
+      "physical",
+      "healing"
+    ],
+    "clip": "pistol_hit"
+  },
+  {
+    "id": "cleaver_1",
+    "weapon": "cleaver",
+    "name": "连续追刀",
+    "text": "连续两次命中后追加一刀",
+    "tags": [
+      "melee"
+    ],
+    "clip": "cleaver"
+  },
+  {
+    "id": "cleaver_2",
+    "weapon": "cleaver",
+    "name": "回身斩",
+    "text": "斩杀后追加反向横扫",
+    "tags": [
+      "melee"
+    ],
+    "clip": "cleaver"
+  },
+  {
+    "id": "brick_1",
+    "weapon": "brick",
+    "name": "跳弹砖块",
+    "text": "落地后弹向另一名敌人",
+    "tags": [
+      "physical",
+      "pickup"
+    ],
+    "clip": "brick_hit"
+  },
+  {
+    "id": "brick_2",
+    "weapon": "brick",
+    "name": "冲击回收",
+    "text": "落地冲击吸附附近掉落",
+    "tags": [
+      "physical",
+      "pickup"
+    ],
+    "clip": "brick_hit"
+  },
+  {
+    "id": "chain_1",
+    "weapon": "chain",
+    "name": "分叉电路",
+    "text": "第二跳分出一条支链；支链与主链共用12人命中上限",
+    "tags": [
+      "electric"
+    ],
+    "clip": "lightning"
+  },
+  {
+    "id": "chain_2",
+    "weapon": "chain",
+    "name": "末端放电",
+    "text": "最后一跳造成范围放电",
+    "tags": [
+      "electric"
+    ],
+    "clip": "lightning"
+  },
+  {
+    "id": "acid_1",
+    "weapon": "acid",
+    "name": "余压飞溅",
+    "text": "酸区消散时向外飞溅",
+    "tags": [
+      "acid"
+    ],
+    "clip": "acid_spray"
+  },
+  {
+    "id": "acid_2",
+    "weapon": "acid",
+    "name": "腐蚀通道",
+    "text": "喷洒路径留下连续酸带",
+    "tags": [
+      "acid"
+    ],
+    "clip": "acid_spray"
+  },
+  {
+    "id": "chainsaw_1",
+    "weapon": "chainsaw",
+    "name": "蒸汽排压",
+    "text": "过热时释放蒸汽冲击",
+    "tags": [
+      "melee"
+    ],
+    "clip": "chainsaw"
+  },
+  {
+    "id": "chainsaw_2",
+    "weapon": "chainsaw",
+    "name": "斩杀散热",
+    "text": "斩杀降低0.7秒热量，延长本轮工作；每人每秒一次",
+    "tags": [
+      "melee"
+    ],
+    "clip": "chainsaw"
+  },
+  {
+    "id": "crossbow_1",
+    "weapon": "crossbow",
+    "name": "破甲分矢",
+    "text": "命中精英或首领后分出两支短弩，分别造成50%伤害",
+    "tags": [
+      "physical"
+    ],
+    "clip": "bolt_hit"
+  },
+  {
+    "id": "crossbow_2",
+    "weapon": "crossbow",
+    "name": "三箭连发",
+    "text": "蓄力后纵向连续射出三箭",
+    "tags": [
+      "physical"
+    ],
+    "clip": "bolt_hit"
+  },
+  {
+    "id": "decoy_1",
+    "weapon": "decoy",
+    "name": "双重回声",
+    "text": "诱饵结束时发出两次震荡",
+    "tags": [
+      "sonic"
+    ],
+    "clip": "sonic"
+  },
+  {
+    "id": "decoy_2",
+    "weapon": "decoy",
+    "name": "持续共鸣",
+    "text": "诱饵存续时周期发出音波",
+    "tags": [
+      "sonic"
+    ],
+    "clip": "sonic"
+  },
+  {
+    "id": "water_1",
+    "weapon": "water",
+    "name": "交叉水束",
+    "text": "喷射分成两束交叉水流",
+    "tags": [
+      "wet"
+    ],
+    "clip": "water_jet"
+  },
+  {
+    "id": "water_2",
+    "weapon": "water",
+    "name": "蓄压水浪",
+    "text": "连续喷射两秒推出宽浪",
+    "tags": [
+      "wet"
+    ],
+    "clip": "water_jet"
+  },
+  {
+    "id": "pickup_stride",
+    "weapon": "",
+    "name": "轻装疾行",
+    "text": "拾取物资后移动加快25%，持续2秒",
+    "tags": [
+      "pickup",
+      "movement"
+    ],
+    "clip": "dust"
+  },
+  {
+    "id": "heal_magnet",
+    "weapon": "",
+    "name": "急救回收",
+    "text": "使用急救包时释放拾取波",
+    "tags": [
+      "healing",
+      "pickup"
+    ],
+    "clip": "water_loop"
+  },
+  {
+    "id": "move_charge",
+    "weapon": "",
+    "name": "行进蓄力",
+    "text": "移动4秒蓄满，下一次队长攻击伤害提高50%",
+    "tags": [
+      "movement"
+    ],
+    "clip": "wrench"
+  },
+  {
+    "id": "rescue_shield",
+    "weapon": "",
+    "name": "护送约定",
+    "text": "完成救援获得8点护盾，持续3秒",
+    "tags": [
+      "rescue"
+    ],
+    "clip": "armor_hit"
+  },
+  {
+    "id": "auto_aid",
+    "weapon": "",
+    "name": "紧急注射",
+    "text": "生命低于30%时回复20生命，冷却30秒",
+    "tags": [
+      "healing"
+    ],
+    "clip": "water_loop"
+  },
+  {
+    "id": "pickup_echo",
+    "weapon": "",
+    "name": "物尽其用",
+    "text": "每拾取10物资，下一次队长攻击追加一次",
+    "tags": [
+      "pickup"
+    ],
+    "clip": "sonic"
+  }
+]

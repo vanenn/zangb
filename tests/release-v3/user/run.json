@@ -1,0 +1,78 @@
+{
+	"checkpoint_position": [
+		1200.0,
+		900.0
+	],
+	"choices": [],
+	"class_id": "teacher",
+	"difficulty": "challenge",
+	"elapsed_total": 0.0,
+	"equipment": [],
+	"equipment_choices": [],
+	"equipment_return": "combat",
+	"first_core": false,
+	"health": 100.0,
+	"kills": 0,
+	"level": 1,
+	"map_id": "school",
+	"map_state": {},
+	"mods": [],
+	"offers": [
+		{
+			"cost": 28,
+			"id": "electrician",
+			"kind": "person",
+			"label": "新面孔 · 首次保证",
+			"sold": false,
+			"uid": "1-0"
+		},
+		{
+			"cost": 26,
+			"id": "nurse",
+			"kind": "person",
+			"label": "地图倾向人选",
+			"sold": false,
+			"uid": "1-1"
+		},
+		{
+			"cost": 22,
+			"id": "courier",
+			"kind": "person",
+			"label": "随机人选",
+			"sold": false,
+			"uid": "1-2"
+		},
+		{
+			"cost": 30,
+			"id": "book",
+			"kind": "weapon",
+			"sold": false,
+			"uid": "1-3"
+		}
+	],
+	"pending_levels": 0,
+	"perks": {
+		"damage": 0,
+		"pickup": 0,
+		"range": 0,
+		"speed": 0,
+		"stride": 0,
+		"vitality": 0
+	},
+	"refreshes": 0,
+	"rerolls": 2,
+	"rescued": 0,
+	"rng_seed": "9011",
+	"rng_state": "4400449766133757581",
+	"roster": [],
+	"run_id": "teacher-1789917940.869-629434050",
+	"shop_serial": 1,
+	"spent": 0,
+	"supplies": 28,
+	"version": 3,
+	"wave": 0,
+	"weapon_levels": {
+		"book": 1
+	},
+	"xp": 0.0
+}

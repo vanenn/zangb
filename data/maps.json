@@ -1,0 +1,444 @@
+[
+  {
+    "id": "school",
+    "name": "槐荫中学",
+    "subtitle": "那声下课铃，再没有停过。",
+    "tag": "教室木门 · 走廊警铃 · 门口火区",
+    "floor": "626960",
+    "accent": "c2bc8c",
+    "enemies": [
+      "shambler",
+      "runner",
+      "screamer"
+    ],
+    "boss": "bellkeeper",
+    "layout": "school",
+    "size": [
+      2400,
+      1800
+    ],
+    "affinity": [
+      "electrician",
+      "nurse",
+      "sound_tech",
+      "chemist"
+    ],
+    "tactical": [
+      {
+        "id": "door0",
+        "kind": "door",
+        "rect": [
+          848,
+          380,
+          22,
+          140
+        ],
+        "hp": 240,
+        "closed": false
+      },
+      {
+        "id": "door1",
+        "kind": "door",
+        "rect": [
+          2138,
+          380,
+          22,
+          140
+        ],
+        "hp": 240,
+        "closed": false
+      },
+      {
+        "id": "door2",
+        "kind": "door",
+        "rect": [
+          848,
+          1290,
+          22,
+          140
+        ],
+        "hp": 240,
+        "closed": false
+      },
+      {
+        "id": "door3",
+        "kind": "door",
+        "rect": [
+          2138,
+          1290,
+          22,
+          140
+        ],
+        "hp": 240,
+        "closed": false
+      },
+      {
+        "id": "alarm0",
+        "kind": "alarm",
+        "rect": [
+          1120,
+          560,
+          44,
+          44
+        ],
+        "hp": 0,
+        "enabled": true
+      },
+      {
+        "id": "alarm1",
+        "kind": "alarm",
+        "rect": [
+          1250,
+          1190,
+          44,
+          44
+        ],
+        "hp": 0,
+        "enabled": true
+      }
+    ],
+    "barriers": [
+      {
+        "kind": "wall",
+        "rect": [
+          900,
+          760,
+          210,
+          22
+        ]
+      },
+      {
+        "kind": "wall",
+        "rect": [
+          1290,
+          760,
+          210,
+          22
+        ]
+      },
+      {
+        "kind": "wall",
+        "rect": [
+          900,
+          1040,
+          210,
+          22
+        ]
+      },
+      {
+        "kind": "wall",
+        "rect": [
+          1290,
+          1040,
+          210,
+          22
+        ]
+      }
+    ],
+    "rescue_zones": [
+      [
+        555,
+        450
+      ],
+      [
+        1200,
+        920
+      ],
+      [
+        1845,
+        1360
+      ],
+      [
+        555,
+        1360
+      ],
+      [
+        1845,
+        450
+      ]
+    ]
+  },
+  {
+    "id": "street",
+    "name": "雨幕长街",
+    "subtitle": "每一辆空车，都曾装着回家的人。",
+    "tag": "油漏车辆 · 积水导电 · 爆破开路",
+    "floor": "515d5b",
+    "accent": "afb8a6",
+    "enemies": [
+      "shambler",
+      "charger",
+      "spitter"
+    ],
+    "boss": "roadking",
+    "layout": "street",
+    "size": [
+      2400,
+      1800
+    ],
+    "affinity": [
+      "firefighter",
+      "sanitation",
+      "repairer",
+      "courier"
+    ],
+    "tactical": [
+      {
+        "id": "car0",
+        "kind": "car",
+        "rect": [
+          920,
+          610,
+          110,
+          170
+        ],
+        "hp": 180
+      },
+      {
+        "id": "car1",
+        "kind": "car",
+        "rect": [
+          1370,
+          690,
+          110,
+          170
+        ],
+        "hp": 180
+      },
+      {
+        "id": "car2",
+        "kind": "car",
+        "rect": [
+          970,
+          1180,
+          110,
+          170
+        ],
+        "hp": 180
+      },
+      {
+        "id": "car3",
+        "kind": "car",
+        "rect": [
+          1480,
+          1130,
+          110,
+          170
+        ],
+        "hp": 180
+      },
+      {
+        "id": "water0",
+        "kind": "puddle",
+        "rect": [
+          1090,
+          580,
+          220,
+          140
+        ],
+        "hp": 0
+      },
+      {
+        "id": "water1",
+        "kind": "puddle",
+        "rect": [
+          1250,
+          1100,
+          220,
+          140
+        ],
+        "hp": 0
+      },
+      {
+        "id": "water2",
+        "kind": "puddle",
+        "rect": [
+          730,
+          930,
+          220,
+          140
+        ],
+        "hp": 0
+      }
+    ],
+    "barriers": [
+      {
+        "kind": "low",
+        "rect": [
+          740,
+          790,
+          210,
+          55
+        ],
+        "sprite": 6
+      },
+      {
+        "kind": "low",
+        "rect": [
+          1460,
+          940,
+          210,
+          55
+        ],
+        "sprite": 6
+      }
+    ],
+    "rescue_zones": [
+      [
+        1130,
+        480
+      ],
+      [
+        1230,
+        1200
+      ],
+      [
+        760,
+        1000
+      ],
+      [
+        1600,
+        700
+      ]
+    ]
+  },
+  {
+    "id": "mall",
+    "name": "长明百货",
+    "subtitle": "欢迎光临。请从安全出口离开。",
+    "tag": "限时卷帘门 · 定点广播 · 绕后破甲",
+    "floor": "706e60",
+    "accent": "cbb599",
+    "enemies": [
+      "shambler",
+      "armored",
+      "cart"
+    ],
+    "boss": "warden",
+    "layout": "mall",
+    "size": [
+      2400,
+      1800
+    ],
+    "affinity": [
+      "chemical_worker",
+      "hunter",
+      "officer",
+      "chef"
+    ],
+    "tactical": [
+      {
+        "id": "shutter0",
+        "kind": "shutter",
+        "rect": [
+          802,
+          330,
+          18,
+          200
+        ],
+        "hp": 0,
+        "closed": false
+      },
+      {
+        "id": "shutter1",
+        "kind": "shutter",
+        "rect": [
+          2182,
+          330,
+          18,
+          200
+        ],
+        "hp": 0,
+        "closed": false
+      },
+      {
+        "id": "shutter2",
+        "kind": "shutter",
+        "rect": [
+          802,
+          1260,
+          18,
+          200
+        ],
+        "hp": 0,
+        "closed": false
+      },
+      {
+        "id": "shutter3",
+        "kind": "shutter",
+        "rect": [
+          2182,
+          1260,
+          18,
+          200
+        ],
+        "hp": 0,
+        "closed": false
+      },
+      {
+        "id": "speaker0",
+        "kind": "broadcast",
+        "rect": [
+          1020,
+          770,
+          50,
+          50
+        ],
+        "hp": 0
+      },
+      {
+        "id": "speaker1",
+        "kind": "broadcast",
+        "rect": [
+          1390,
+          1040,
+          50,
+          50
+        ],
+        "hp": 0
+      }
+    ],
+    "barriers": [
+      {
+        "kind": "wall",
+        "rect": [
+          920,
+          730,
+          20,
+          180
+        ]
+      },
+      {
+        "kind": "wall",
+        "rect": [
+          1460,
+          940,
+          20,
+          180
+        ]
+      }
+    ],
+    "rescue_zones": [
+      [
+        510,
+        430
+      ],
+      [
+        1200,
+        920
+      ],
+      [
+        1890,
+        1360
+      ],
+      [
+        510,
+        1360
+      ],
+      [
+        1890,
+        430
+      ]
+    ]
+  }
+]

@@ -1,0 +1,72 @@
+{
+	"checkpoint_position": [
+		1200.0,
+		900.0
+	],
+	"class_id": "mechanic",
+	"elapsed_total": 0.0,
+	"health": 100.0,
+	"kills": 0,
+	"level": 1,
+	"map_id": "street",
+	"map_state": {},
+	"offers": [
+		{
+			"cost": 28,
+			"id": "firefighter",
+			"kind": "person",
+			"label": "新面孔 · 首次保证",
+			"sold": true,
+			"uid": "1-0"
+		},
+		{
+			"cost": 24,
+			"id": "repairer",
+			"kind": "person",
+			"label": "地图倾向人选",
+			"sold": false,
+			"uid": "1-1"
+		},
+		{
+			"cost": 28,
+			"id": "hunter",
+			"kind": "person",
+			"label": "随机人选",
+			"sold": false,
+			"uid": "1-2"
+		},
+		{
+			"cost": 26,
+			"id": "wrench",
+			"kind": "weapon",
+			"sold": false,
+			"uid": "1-3"
+		}
+	],
+	"perks": {
+		"damage": 0,
+		"pickup": 0,
+		"range": 0,
+		"speed": 0,
+		"stride": 0,
+		"vitality": 0
+	},
+	"refreshes": 0,
+	"rescued": 0,
+	"rng_seed": "-919150955607637743",
+	"rng_state": "-4341919633138848525",
+	"roster": [
+		"firefighter"
+	],
+	"run_id": "mechanic-1789831538.208-3223001078",
+	"shop_serial": 1,
+	"spent": 28,
+	"supplies": 0,
+	"version": 2,
+	"wave": 0,
+	"weapon_levels": {
+		"chainsaw": 1,
+		"wrench": 1
+	},
+	"xp": 0.0
+}

@@ -1,0 +1,426 @@
+[
+	{
+		"class": "teacher",
+		"completed": true,
+		"elapsed_wall_seconds": 90.547,
+		"fixed_step": 0.0333333333333333,
+		"god_mode": false,
+		"roster": {
+			"chemical_worker": 6,
+			"chemist": 3,
+			"electrician": 5,
+			"hunter": 1,
+			"nurse": 8,
+			"repairer": 1,
+			"sanitation": 1,
+			"sound_tech": 4
+		},
+		"waves": [
+			{
+				"health": 100.0,
+				"kills": 46,
+				"level": 4,
+				"remaining": 0,
+				"rescued": 1,
+				"seconds": 68.8,
+				"supplies": 94,
+				"team": 3,
+				"wave": 1
+			},
+			{
+				"health": 115.0,
+				"kills": 115,
+				"level": 7,
+				"remaining": 0,
+				"rescued": 2,
+				"seconds": 72.7,
+				"supplies": 110,
+				"team": 6,
+				"wave": 2
+			},
+			{
+				"health": 130.0,
+				"kills": 211,
+				"level": 10,
+				"remaining": 0,
+				"rescued": 3,
+				"seconds": 71.0,
+				"supplies": 171,
+				"team": 9,
+				"wave": 3
+			},
+			{
+				"health": 145.0,
+				"kills": 340,
+				"level": 13,
+				"remaining": 0,
+				"rescued": 4,
+				"seconds": 67.2,
+				"supplies": 232,
+				"team": 12,
+				"wave": 4
+			},
+			{
+				"health": 160.0,
+				"kills": 503,
+				"level": 16,
+				"remaining": 0,
+				"rescued": 5,
+				"seconds": 76.7,
+				"supplies": 307,
+				"team": 15,
+				"wave": 5
+			},
+			{
+				"health": 190.0,
+				"kills": 692,
+				"level": 19,
+				"remaining": 0,
+				"rescued": 6,
+				"seconds": 68.1,
+				"supplies": 307,
+				"team": 18,
+				"wave": 6
+			},
+			{
+				"health": 205.0,
+				"kills": 908,
+				"level": 22,
+				"remaining": 0,
+				"rescued": 7,
+				"seconds": 70.5,
+				"supplies": 281,
+				"team": 21,
+				"wave": 7
+			},
+			{
+				"health": 205.0,
+				"kills": 1154,
+				"level": 25,
+				"remaining": 0,
+				"rescued": 8,
+				"seconds": 66.0,
+				"supplies": 345,
+				"team": 24,
+				"wave": 8
+			},
+			{
+				"health": 220.0,
+				"kills": 1430,
+				"level": 28,
+				"remaining": 0,
+				"rescued": 9,
+				"seconds": 69.4,
+				"supplies": 388,
+				"team": 27,
+				"wave": 9
+			},
+			{
+				"health": 235.0,
+				"kills": 1599,
+				"level": 30,
+				"remaining": 0,
+				"rescued": 10,
+				"seconds": 72.3,
+				"supplies": 396,
+				"team": 30,
+				"wave": 10
+			}
+		],
+		"weapon_levels": {
+			"acid": 5,
+			"book": 5,
+			"chain": 4,
+			"crossbow": 2,
+			"decoy": 3,
+			"molotov": 2,
+			"nailgun": 2,
+			"pistol": 5,
+			"water": 2
+		}
+	},
+	{
+		"class": "mechanic",
+		"completed": true,
+		"elapsed_wall_seconds": 50.697,
+		"fixed_step": 0.0333333333333333,
+		"god_mode": false,
+		"roster": {
+			"chemical_worker": 5,
+			"chemist": 2,
+			"courier": 10,
+			"firefighter": 1,
+			"nurse": 2,
+			"officer": 1,
+			"repairer": 6,
+			"sanitation": 1,
+			"sound_tech": 1
+		},
+		"waves": [
+			{
+				"health": 100.0,
+				"kills": 46,
+				"level": 4,
+				"remaining": 0,
+				"rescued": 1,
+				"seconds": 67.6,
+				"supplies": 89,
+				"team": 3,
+				"wave": 1
+			},
+			{
+				"health": 100.0,
+				"kills": 115,
+				"level": 7,
+				"remaining": 0,
+				"rescued": 2,
+				"seconds": 66.5,
+				"supplies": 127,
+				"team": 6,
+				"wave": 2
+			},
+			{
+				"health": 88.0,
+				"kills": 211,
+				"level": 9,
+				"remaining": 0,
+				"rescued": 3,
+				"seconds": 65.5,
+				"supplies": 224,
+				"team": 9,
+				"wave": 3
+			},
+			{
+				"health": 130.0,
+				"kills": 337,
+				"level": 12,
+				"remaining": 0,
+				"rescued": 4,
+				"seconds": 67.1,
+				"supplies": 261,
+				"team": 12,
+				"wave": 4
+			},
+			{
+				"health": 118.0,
+				"kills": 500,
+				"level": 15,
+				"remaining": 0,
+				"rescued": 5,
+				"seconds": 68.7,
+				"supplies": 305,
+				"team": 15,
+				"wave": 5
+			},
+			{
+				"health": 143.0,
+				"kills": 689,
+				"level": 18,
+				"remaining": 0,
+				"rescued": 6,
+				"seconds": 67.6,
+				"supplies": 294,
+				"team": 18,
+				"wave": 6
+			},
+			{
+				"health": 127.1,
+				"kills": 905,
+				"level": 20,
+				"remaining": 0,
+				"rescued": 7,
+				"seconds": 66.3,
+				"supplies": 336,
+				"team": 21,
+				"wave": 7
+			},
+			{
+				"health": 138.5,
+				"kills": 1151,
+				"level": 23,
+				"remaining": 0,
+				"rescued": 8,
+				"seconds": 63.3,
+				"supplies": 354,
+				"team": 24,
+				"wave": 8
+			},
+			{
+				"health": 160.0,
+				"kills": 1427,
+				"level": 26,
+				"remaining": 0,
+				"rescued": 9,
+				"seconds": 65.6,
+				"supplies": 380,
+				"team": 27,
+				"wave": 9
+			},
+			{
+				"health": 160.0,
+				"kills": 1596,
+				"level": 27,
+				"remaining": 0,
+				"rescued": 10,
+				"seconds": 61.9,
+				"supplies": 438,
+				"team": 30,
+				"wave": 10
+			}
+		],
+		"weapon_levels": {
+			"acid": 5,
+			"brick": 5,
+			"chainsaw": 1,
+			"decoy": 2,
+			"molotov": 3,
+			"nailgun": 5,
+			"pistol": 3,
+			"shotgun": 4,
+			"water": 4,
+			"wrench": 5
+		}
+	},
+	{
+		"class": "guard",
+		"completed": true,
+		"elapsed_wall_seconds": 74.387,
+		"fixed_step": 0.0333333333333333,
+		"god_mode": false,
+		"roster": {
+			"chef": 1,
+			"chemical_worker": 11,
+			"courier": 1,
+			"electrician": 1,
+			"firefighter": 1,
+			"hunter": 2,
+			"officer": 5,
+			"repairer": 4,
+			"sound_tech": 3
+		},
+		"waves": [
+			{
+				"health": 120.0,
+				"kills": 46,
+				"level": 4,
+				"remaining": 0,
+				"rescued": 1,
+				"seconds": 66.3,
+				"supplies": 93,
+				"team": 3,
+				"wave": 1
+			},
+			{
+				"health": 135.0,
+				"kills": 115,
+				"level": 7,
+				"remaining": 0,
+				"rescued": 2,
+				"seconds": 67.7,
+				"supplies": 122,
+				"team": 6,
+				"wave": 2
+			},
+			{
+				"health": 135.0,
+				"kills": 211,
+				"level": 9,
+				"remaining": 0,
+				"rescued": 3,
+				"seconds": 63.7,
+				"supplies": 218,
+				"team": 9,
+				"wave": 3
+			},
+			{
+				"health": 150.0,
+				"kills": 337,
+				"level": 12,
+				"remaining": 0,
+				"rescued": 4,
+				"seconds": 65.3,
+				"supplies": 244,
+				"team": 12,
+				"wave": 4
+			},
+			{
+				"health": 165.0,
+				"kills": 500,
+				"level": 15,
+				"remaining": 0,
+				"rescued": 5,
+				"seconds": 73.0,
+				"supplies": 351,
+				"team": 15,
+				"wave": 5
+			},
+			{
+				"health": 165.0,
+				"kills": 689,
+				"level": 18,
+				"remaining": 0,
+				"rescued": 6,
+				"seconds": 67.9,
+				"supplies": 323,
+				"team": 18,
+				"wave": 6
+			},
+			{
+				"health": 165.0,
+				"kills": 905,
+				"level": 20,
+				"remaining": 0,
+				"rescued": 7,
+				"seconds": 63.9,
+				"supplies": 331,
+				"team": 21,
+				"wave": 7
+			},
+			{
+				"health": 180.0,
+				"kills": 1151,
+				"level": 23,
+				"remaining": 0,
+				"rescued": 8,
+				"seconds": 76.1,
+				"supplies": 385,
+				"team": 24,
+				"wave": 8
+			},
+			{
+				"health": 180.0,
+				"kills": 1427,
+				"level": 26,
+				"remaining": 0,
+				"rescued": 9,
+				"seconds": 65.6,
+				"supplies": 428,
+				"team": 27,
+				"wave": 9
+			},
+			{
+				"health": 180.0,
+				"kills": 1596,
+				"level": 27,
+				"remaining": 0,
+				"rescued": 10,
+				"seconds": 70.3,
+				"supplies": 491,
+				"team": 30,
+				"wave": 10
+			}
+		],
+		"weapon_levels": {
+			"acid": 5,
+			"baton": 5,
+			"brick": 3,
+			"chain": 2,
+			"chainsaw": 1,
+			"cleaver": 2,
+			"crossbow": 5,
+			"decoy": 4,
+			"nailgun": 5,
+			"shotgun": 3
+		}
+	}
+]

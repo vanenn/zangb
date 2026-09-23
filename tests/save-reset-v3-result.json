@@ -1,0 +1,12 @@
+{
+  "directory": "C:\\Users\\requiem\\AppData\\Roaming\\GreycitySurvivors",
+  "recursive_delete": false,
+  "preserved_existing_v3": false,
+  "schema": 3,
+  "removed": [
+    "run.json",
+    "run.json.bak",
+    "progress.json",
+    "progress.json.bak"
+  ]
+}

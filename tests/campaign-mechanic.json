@@ -1,0 +1,121 @@
+[
+	{
+		"class": "mechanic",
+		"completed": true,
+		"elapsed_wall_seconds": 23.166,
+		"fixed_step": 0.0333333333333333,
+		"god_mode": false,
+		"waves": [
+			{
+				"health": 100.0,
+				"kills": 46,
+				"level": 4,
+				"remaining": 0,
+				"rescued": 1,
+				"seconds": 64.9,
+				"supplies": 89,
+				"team": 3,
+				"wave": 1
+			},
+			{
+				"health": 100.0,
+				"kills": 115,
+				"level": 7,
+				"remaining": 0,
+				"rescued": 2,
+				"seconds": 62.1,
+				"supplies": 126,
+				"team": 6,
+				"wave": 2
+			},
+			{
+				"health": 93.4,
+				"kills": 211,
+				"level": 9,
+				"remaining": 0,
+				"rescued": 3,
+				"seconds": 70.6,
+				"supplies": 214,
+				"team": 9,
+				"wave": 3
+			},
+			{
+				"health": 115.0,
+				"kills": 337,
+				"level": 12,
+				"remaining": 0,
+				"rescued": 4,
+				"seconds": 66.5,
+				"supplies": 234,
+				"team": 12,
+				"wave": 4
+			},
+			{
+				"health": 130.0,
+				"kills": 500,
+				"level": 15,
+				"remaining": 0,
+				"rescued": 5,
+				"seconds": 67.1,
+				"supplies": 348,
+				"team": 15,
+				"wave": 5
+			},
+			{
+				"health": 126.2,
+				"kills": 689,
+				"level": 18,
+				"remaining": 0,
+				"rescued": 6,
+				"seconds": 70.1,
+				"supplies": 320,
+				"team": 18,
+				"wave": 6
+			},
+			{
+				"health": 130.0,
+				"kills": 905,
+				"level": 20,
+				"remaining": 0,
+				"rescued": 7,
+				"seconds": 69.1,
+				"supplies": 366,
+				"team": 21,
+				"wave": 7
+			},
+			{
+				"health": 130.0,
+				"kills": 1151,
+				"level": 23,
+				"remaining": 0,
+				"rescued": 8,
+				"seconds": 67.8,
+				"supplies": 380,
+				"team": 24,
+				"wave": 8
+			},
+			{
+				"health": 130.0,
+				"kills": 1427,
+				"level": 26,
+				"remaining": 0,
+				"rescued": 9,
+				"seconds": 66.9,
+				"supplies": 355,
+				"team": 27,
+				"wave": 9
+			},
+			{
+				"health": 130.0,
+				"kills": 1596,
+				"level": 27,
+				"remaining": 0,
+				"rescued": 10,
+				"seconds": 62.3,
+				"supplies": 425,
+				"team": 30,
+				"wave": 10
+			}
+		]
+	}
+]

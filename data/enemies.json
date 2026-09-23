@@ -1,0 +1,12 @@
+[
+  {"id":"shambler","name":"游荡者","sprite":9,"hp":24,"speed":48,"damage":10,"radius":14,"reward":1,"behavior":"chase"},
+  {"id":"runner","name":"疾行者","sprite":10,"hp":19,"speed":92,"damage":9,"radius":13,"reward":1,"behavior":"chase"},
+  {"id":"screamer","name":"失声者","sprite":11,"hp":44,"speed":37,"damage":12,"radius":15,"reward":3,"behavior":"scream"},
+  {"id":"charger","name":"冲撞者","sprite":10,"hp":45,"speed":51,"damage":15,"radius":17,"reward":2,"behavior":"charge"},
+  {"id":"spitter","name":"腐液者","sprite":12,"hp":54,"speed":35,"damage":12,"radius":20,"reward":3,"behavior":"spit"},
+  {"id":"armored","name":"铁皮者","sprite":13,"hp":82,"speed":30,"damage":14,"radius":19,"reward":3,"behavior":"armor"},
+  {"id":"cart","name":"推车人","sprite":14,"hp":60,"speed":40,"damage":16,"radius":21,"reward":3,"behavior":"charge"},
+  {"id":"bellkeeper","name":"终课 · 敲钟人","sprite":15,"hp":5200,"speed":36,"damage":22,"radius":36,"reward":90,"behavior":"bell","boss":true},
+  {"id":"roadking","name":"断路 · 腐行巨兽","sprite":12,"hp":6200,"speed":36,"damage":24,"radius":40,"reward":90,"behavior":"roadboss","boss":true},
+  {"id":"warden","name":"闭店 · 铁幕守卫","sprite":13,"hp":7000,"speed":32,"damage":25,"radius":36,"reward":90,"behavior":"warden","boss":true}
+]

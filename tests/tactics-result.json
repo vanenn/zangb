@@ -1,0 +1,77 @@
+{
+	"failures": [],
+	"trials": [
+		{
+			"duration_seconds": 12,
+			"enemy_seconds_within_90px": 182.77,
+			"first_contact_seconds": 3.6,
+			"fixed_population": 20,
+			"fixture_destroyed": false,
+			"friendly_attacks": false,
+			"health_lost": 120.0,
+			"initial_explosion_kills": 0,
+			"map": "school",
+			"mechanism_enabled": false
+		},
+		{
+			"duration_seconds": 12,
+			"enemy_seconds_within_90px": 0.0,
+			"first_contact_seconds": -1.0,
+			"fixed_population": 20,
+			"fixture_destroyed": false,
+			"friendly_attacks": false,
+			"health_lost": 0,
+			"initial_explosion_kills": 0,
+			"map": "school",
+			"mechanism_enabled": true
+		},
+		{
+			"duration_seconds": 12,
+			"enemy_seconds_within_90px": 240.0,
+			"first_contact_seconds": 0.0,
+			"fixed_population": 20,
+			"fixture_destroyed": false,
+			"friendly_attacks": false,
+			"health_lost": 170.0,
+			"initial_explosion_kills": 0,
+			"map": "street",
+			"mechanism_enabled": false
+		},
+		{
+			"duration_seconds": 12,
+			"enemy_seconds_within_90px": 0.0,
+			"first_contact_seconds": -1.0,
+			"fixed_population": 20,
+			"fixture_destroyed": true,
+			"friendly_attacks": false,
+			"health_lost": 0,
+			"initial_explosion_kills": 20,
+			"map": "street",
+			"mechanism_enabled": true
+		},
+		{
+			"duration_seconds": 12,
+			"enemy_seconds_within_90px": 213.97,
+			"first_contact_seconds": 1.76666666666667,
+			"fixed_population": 20,
+			"fixture_destroyed": false,
+			"friendly_attacks": false,
+			"health_lost": 140.0,
+			"initial_explosion_kills": 0,
+			"map": "mall",
+			"mechanism_enabled": false
+		},
+		{
+			"duration_seconds": 12,
+			"enemy_seconds_within_90px": 0.0,
+			"first_contact_seconds": -1.0,
+			"fixed_population": 20,
+			"fixture_destroyed": false,
+			"friendly_attacks": false,
+			"health_lost": 0,
+			"initial_explosion_kills": 0,
+			"map": "mall",
+			"mechanism_enabled": true
+		}
+	]
+}
