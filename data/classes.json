@@ -1,5 +1,44 @@
 [
-  {"id":"teacher","name":"教师","person":"沈知秋","map":"school","sprite":0,"weapon":"book","bonus":"经验获取 +15%","line":"点名册上的空白，今晚还要少一些。","bio":"最后一堂课没有下课铃。\n她带着学生留下的课本，走回了校门。","xp_mult":1.15,"health_mult":1.0,"upgrade_mult":1.0},
-  {"id":"mechanic","name":"维修工","person":"周砚","map":"street","sprite":1,"weapon":"wrench","bonus":"武器升级费用 −15%","line":"这座城坏了，人还可以修好。","bio":"拖车没油了，工具箱还在。\n沿着被堵死的街道，找一条活路。","xp_mult":1.0,"health_mult":1.0,"upgrade_mult":0.85},
-  {"id":"guard","name":"保安","person":"陆青","map":"mall","sprite":2,"weapon":"baton","bonus":"队伍最大生命 +20%","line":"只要还有人，今晚就不打烊。","bio":"闭店广播循环了七十二小时。\n她把最后一扇安全门留给了陌生人。","xp_mult":1.0,"health_mult":1.2,"upgrade_mult":1.0}
+  {
+    "id": "teacher",
+    "name": "化学教师",
+    "person": "沈知秋",
+    "map": "school",
+    "sprite": 3,
+    "weapon": "molotov",
+    "bonus": "经验获取 +15%",
+    "line": "实验室的火熄过一次，这次不能再让它熄灭。",
+    "bio": "最后一堂课没有下课铃。\n她把实验室里的玻璃瓶装上燃料，带着学生走回校门。",
+    "xp_mult": 1.15,
+    "health_mult": 1.0,
+    "upgrade_mult": 1.0
+  },
+  {
+    "id": "mechanic",
+    "name": "维修工",
+    "person": "周砚",
+    "map": "street",
+    "sprite": 1,
+    "weapon": "wrench",
+    "bonus": "武器升级费用 −15%",
+    "line": "这座城坏了，人还可以修好。",
+    "bio": "拖车没油了，工具箱还在。\n沿着被堵死的街道，找一条活路。",
+    "xp_mult": 1.0,
+    "health_mult": 1.0,
+    "upgrade_mult": 0.85
+  },
+  {
+    "id": "guard",
+    "name": "保安",
+    "person": "陆青",
+    "map": "mall",
+    "sprite": 2,
+    "weapon": "baton",
+    "bonus": "队伍最大生命 +20%",
+    "line": "只要还有人，今晚就不打烊。",
+    "bio": "闭店广播循环了七十二小时。\n她把最后一扇安全门留给了陌生人。",
+    "xp_mult": 1.0,
+    "health_mult": 1.2,
+    "upgrade_mult": 1.0
+  }
 ]

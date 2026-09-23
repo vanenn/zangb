@@ -3225,7 +3225,7 @@
             420
           ],
           "kind": "rescue",
-          "survivor": "nurse",
+          "survivor": "sanitation",
           "hold": 1.6,
           "reward": "护士加入队伍"
         },

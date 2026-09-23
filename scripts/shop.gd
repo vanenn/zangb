@@ -16,7 +16,7 @@ func stock(run, unlocked: Array):
 			label = "已有职业补员"
 			if not run.roster.is_empty(): candidates = run.counts.keys()
 			if run.shop_serial == 1:
-				candidates = ["electrician","chemical_worker","firefighter","hunter","sound_tech","sanitation"]
+				candidates = ["firefighter","sanitation","hunter","chemical_worker","demolitionist"]
 				label = "新面孔 · 首次保证"
 		if index == 1:
 			label = "地图倾向人选"

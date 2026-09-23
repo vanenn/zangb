@@ -742,7 +742,7 @@ func show_build(origin: String="combat"):
 	var body=_scroll_body(modal,Rect2(285,275,1030,445),Vector2(985,1500))
 	var y=0
 	var available=run.tags()
-	var tag_names={"wet":"湿润","electric":"电击","chainsaw":"电锯","melee":"近战","acid":"腐蚀","fire":"火焰","healing":"治疗","sonic":"声波","brick":"板砖"}
+	var tag_names={"wet":"湿润","electric":"电击","chainsaw":"电锯","melee":"近战","acid":"腐蚀","fire":"火焰","healing":"治疗","sonic":"声波","explosive":"爆破"}
 	for id in run.equipment:
 		var missing=content.equipment[id].requires.filter(func(t): return t not in available)
 		var hint=""
@@ -755,13 +755,13 @@ func show_build(origin: String="combat"):
 	for id in run.mods:
 		_label(body,"改装 / "+content.mods[id].name+" · 受益%s人：" % benefit_count(id)+content.mods[id].text,Rect2(12,y,950,65),18,PAPER)
 		y+=68
-	_label(body,"流派线索\n水电：湿润＋电击＋拾取充能\n腐蚀近战：强酸＋电锯＋治疗护盾\n诱饵火场：声波聚怪＋地面火区\n回收游击：移动蓄能＋拾取波＋急救",Rect2(12,y+15,945,175),20,GOLD)
-	y+=205
+	_label(body,"八种武器定位\n近战：扳手（单体瞬击）／电锯（单体持续）／警棍（群体瞬击）／清障刷（群体持续）\n远程：重弩（单体瞬击）／酸液喷枪（单体持续）／破拆药包（群体瞬击）／燃烧瓶（群体持续）",Rect2(12,y+15,945,145),18,GOLD)
+	y+=170
 	var tags=run.tags()
 	for id in content.equipment:
 		if id in run.equipment: continue
 		var missing=content.equipment[id].requires.filter(func(t): return t not in tags)
-		var names={"wet":"湿润","electric":"电击","chainsaw":"电锯","melee":"近战","acid":"腐蚀","fire":"火焰","healing":"治疗","sonic":"声波","brick":"板砖"}
+		var names={"wet":"湿润","electric":"电击","chainsaw":"电锯","melee":"近战","acid":"腐蚀","fire":"火焰","healing":"治疗","sonic":"声波","explosive":"爆破"}
 		var text=[]
 		for tag in missing: text.append(names.get(tag,tag))
 		_label(body,content.equipment[id].name+" / "+("已满足获取条件" if missing.is_empty() else "尚缺："+"、".join(text)),Rect2(12,y,940,32),16,MUTED)
@@ -849,11 +849,22 @@ func show_codex():
 	_clear(modal)
 	_cover(0.88)
 	_label(ui,"活着的人，留下名字",Rect2(70,39,1110,70),43,PAPER)
-	_label(ui,"十二种职业与全部构筑已开放。每次旅程从普通人开始。",Rect2(70,113,1120,40),21,MUTED)
+	_label(ui,"八种武器风格，由八组城市幸存者带入战场。",Rect2(70,113,1120,40),21,MUTED)
 	_button(ui,"构筑图鉴",Rect2(1090,60,200,48),show_build_codex,false,"BuildCodex")
 	_button(ui,"返回登记册",Rect2(1320,60,210,48),show_menu)
 	var body = _scroll_body(ui,Rect2(70,186,1460,512),Vector2(1440,980))
 	var index = 0
+	for id in content.classes:
+		var data=content.classes[id]
+		var x=(index%3)*482
+		var y=(index/3)*245
+		_panel(body,Rect2(x,y,463,223),PANEL)
+		_texture(body,content.character_textures[data.sprite],Rect2(x+10,y+24,155,176))
+		_label(body,data.name,Rect2(x+178,y+20,277,40),25,PAPER)
+		_label(body,content.weapons[data.weapon].name,Rect2(x+180,y+68,265,34),19,GOLD)
+		_label(body,data.bonus+"\n"+data.line,Rect2(x+179,y+112,267,73),18,MUTED)
+		_label(body,content.weapons[data.weapon].preview,Rect2(x+179,y+182,270,39),13,GREEN)
+		index+=1
 	for id in content.survivors:
 		var data = content.survivors[id]
 		var unlocked = id in progress.meta.unlocked
@@ -863,7 +874,7 @@ func show_codex():
 		_texture(body,content.character_textures[data.sprite],Rect2(x+10,y+24,155,176),Color.WHITE if unlocked else Color(0.25,0.31,0.25))
 		_label(body,data.name,Rect2(x+178,y+20,277,40),25,PAPER)
 		_label(body,content.weapons[data.weapon].name,Rect2(x+180,y+68,265,34),19,GOLD)
-		_label(body,data.description if unlocked else "生还第 %s 波后解锁。" % (3 if id == "chef" else 5),Rect2(x+179,y+112,267,73),18,MUTED)
+		_label(body,data.description if unlocked else "通过整备招募加入队伍。",Rect2(x+179,y+112,267,73),18,MUTED)
 		_label(body,content.weapons[data.weapon].preview if unlocked else "尚无回音",Rect2(x+179,y+182,270,39),13,GREEN if unlocked else RED)
 		index += 1
 	_label(ui,"轻松 %s/%s 次生还　·　挑战 %s/%s 次生还　·　最多 %s 人同行" % [progress.meta.difficulties.easy.wins,progress.meta.difficulties.easy.runs,progress.meta.difficulties.challenge.wins,progress.meta.difficulties.challenge.runs,progress.meta.best_team],Rect2(70,724,1460,50),23,GOLD)
@@ -878,7 +889,7 @@ func show_build_codex():
 	_clear(modal)
 	_cover(0.88)
 	_label(ui,"构筑图鉴",Rect2(70,39,1000,70),43,PAPER)
-	_label(ui,"水电 / 腐蚀近战 / 诱饵火场 / 回收游击：可以自由混搭，没有隐藏套装奖励。",Rect2(70,113,1440,42),20,MUTED)
+	_label(ui,"八种基础武器改装与通用战术改装。招募同伴会强化对应武器。",Rect2(70,113,1440,42),20,MUTED)
 	_button(ui,"返回人物图鉴",Rect2(1300,60,230,48),show_codex)
 	var body=_scroll_body(ui,Rect2(70,180,1460,650),Vector2(1420,4400))
 	var y=0

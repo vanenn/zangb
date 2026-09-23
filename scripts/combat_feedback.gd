@@ -28,6 +28,8 @@ const STYLES = {
 	"chain":{"clip":"lightning","color":"a6dce0","kind":"electric","count":8,"force":3.5,"shake":1.0,"sound":"electric_hit"},
 	"acid":{"clip":"acid_spray","color":"b8ce78","kind":"droplet","count":7,"force":1.0,"shake":0.3,"sound":"acid_hit"},
 	"chainsaw":{"clip":"chainsaw","color":"efc080","kind":"spark","count":9,"force":2.5,"shake":1.2,"sound":"saw_hit"},
+	"sweeper":{"clip":"water_jet","color":"a4cbd0","kind":"mist","count":8,"force":2.0,"shake":0.5,"sound":"water_hit"},
+	"breach":{"clip":"explosion","color":"e0a15e","kind":"ember","count":20,"force":12.0,"shake":6.5,"sound":"explosion"},
 	"crossbow":{"clip":"bolt_hit","color":"d9c9a1","kind":"chip","count":10,"force":9.0,"shake":2.6,"sound":"bolt_hit"},
 	"decoy":{"clip":"sonic","color":"c5abcd","kind":"pulse","count":9,"force":5.0,"shake":2.5,"sound":"pulse_hit"},
 	"water":{"clip":"water_loop","color":"a4cbd0","kind":"mist","count":6,"force":1.0,"shake":0.4,"sound":"water_hit"},
@@ -96,7 +98,7 @@ func shot(origin: Vector2,direction: Vector2,id: String,source: String,charge: b
 	var duration = 0.42 if id == "wrench" else 0.65
 	poses[source] = {"life":duration if charge else 0.22,"max":duration if charge else 0.22,"direction":direction,"id":id,"charge":charge}
 	if charge: return
-	if id in ["chainsaw","water"]:
+	if id in ["chainsaw","water","sweeper"]:
 		var key = source+id
 		if continuous_gate.get(key,-1) > animation_time: return
 		continuous_gate[key] = animation_time+0.12
@@ -109,7 +111,7 @@ func impact(enemy: Dictionary,origin: Vector2,id: String,amount: float):
 	if not STYLES.has(id): return
 	var style = STYLES[id]
 	var direction = origin.direction_to(enemy.pos)
-	var continuous = id in ["chainsaw","water","acid","molotov"]
+	var continuous = id in ["chainsaw","sweeper","acid","molotov"]
 	var key = str(enemy.uid)+id
 	if continuous and continuous_gate.get(key,-1) > animation_time: return
 	continuous_gate[key] = animation_time+(0.14 if continuous else 0.0)

@@ -48,7 +48,8 @@ func update(delta: float):
 		var target = sim._nearest(sim.captain,320)
 		if target >= 0 and gate("battery",1):
 			battery_charge -= 8
-			var w = sim.run.weapon("chain")
+			var w = sim.run.weapon("sweeper")
+			w.id = "chain"
 			w.damage = 24.0
 			w.jumps = 3
 			sim.weapons.chain(sim.captain,w,target,"equipment",true)
@@ -109,25 +110,26 @@ func before_attack(origin: Vector2,w: Dictionary,index: int,source: String):
 		if equipped("flywheel"): sim.weapons.pulse(sim.enemies[index].pos,65,w.damage*0.5,origin,0.15,"wrench",source,true)
 	if med_ready:
 		med_ready = false
-		sim.weapons.pulse(origin,100,12,origin,0.2,"decoy",source,true)
+		sim.weapons.pulse(origin,100,12,origin,0.2,"baton",source,true)
 
 func hit(enemy: Dictionary,origin: Vector2,id: String,source: String,base: float,secondary: bool):
 	if secondary: return
-	if id == "decoy" and equipped("resonator"): enemy.resonance = 3.0
-	if id == "water" and equipped("coolant") and gate("coolant",4):
+	if id == "baton" and equipped("resonator"): enemy.resonance = 3.0
+	if id == "sweeper" and equipped("coolant") and gate("coolant",4):
 		for key in sim.weapons.states:
 			if sim.weapons.source_position(key,origin).distance_to(origin) <= 240:
 				sim.weapons.states[key].heat = maxf(0,sim.weapons.states[key].heat-1.0)
 				sim.weapons.states[key].overheat = maxf(0,sim.weapons.states[key].overheat-0.5)
-	if id in ["wrench","baton","cleaver","chainsaw"] and enemy.get("corrode",0)>0 and equipped("filter") and gate("filter",4): add_shield()
-	if id == "chain" and enemy.get("wet",0)>0 and equipped("coil") and gate("coil",1):
-		var excluded=sim.weapons.chain_hits.duplicate() if sim.weapons.chain_hits is Dictionary else {enemy.uid:true}
+	if id in ["wrench","baton","chainsaw","sweeper"] and enemy.get("corrode",0)>0 and equipped("filter") and gate("filter",4): add_shield()
+	if id in ["chain","sweeper"] and enemy.get("wet",0)>0 and equipped("coil") and gate("coil",1):
+		var excluded=sim.weapons.chain_hits.duplicate() if id=="chain" and sim.weapons.chain_hits is Dictionary else {}
+		excluded[enemy.uid]=true
 		var index = sim.weapons.other_target(enemy.pos,165,excluded,true)
 		if index >= 0:
 			var next = sim.enemies[index]
 			sim.weapons.effect("arc",enemy.pos,next.pos,0,Color("97cdd5"),0.28)
 			sim._damage(index,base*0.5,enemy.pos,"chain",source,true)
-	if id == "brick" and enemy.get("burning",0)>0 and equipped("fuse") and gate("fuse",1): sim.weapons.pulse(enemy.pos,65,base*0.5,origin,0,"molotov",source,true)
+	if id == "breach" and enemy.get("burning",0)>0 and equipped("fuse") and gate("fuse",1): sim.weapons.pulse(enemy.pos,65,base*0.5,origin,0,"molotov",source,true)
 
 func killed(enemy: Dictionary,origin: Vector2,id: String,source: String,base: float,secondary: bool):
 	if secondary: return
@@ -138,11 +140,11 @@ func killed(enemy: Dictionary,origin: Vector2,id: String,source: String,base: fl
 	if id == "chainsaw" and mod("chainsaw_2") and gate("saw_kill_"+source,1):
 		var state = sim.weapons.state(source)
 		state.heat = maxf(0,state.heat-0.7)
-	if id == "cleaver" and mod("cleaver_2") and gate("cleaver_kill_"+source,1):
-		sim.weapons.pending.append({"kind":"reverse","delay":0.08,"origin":origin,"source":source,"weapon":sim.run.weapon("cleaver"),"direction":enemy.pos.direction_to(origin)})
+	if id == "breach" and mod("breach_2") and gate("breach_kill_"+source,0.8):
+		sim.weapons.pulse(enemy.pos,58,base*0.35,enemy.pos,0.1,"breach",source,true)
 
 func overheat(origin: Vector2,w: Dictionary,index: int,source: String):
-	if mod("chainsaw_1"): sim.weapons.pulse(origin,110,w.damage*0.5,origin,0.35,"water",source,true)
+	if mod("chainsaw_1"): sim.weapons.pulse(origin,110,w.damage*0.5,origin,0.35,"sweeper",source,true)
 	if equipped("valve") and gate("valve",1):
 		var acid = sim.run.weapon("acid")
 		acid.damage = w.damage*0.25

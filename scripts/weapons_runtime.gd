@@ -89,11 +89,13 @@ func fire(origin: Vector2, weapon: Dictionary, index: int, source: String, secon
 			pending.append({"kind":"heavy" if weapon.id == "wrench" else "crossbow","delay":delay,"origin":origin,"source":source,"weapon":weapon})
 			effect("charge",origin,sim.enemies[index].pos,weapon.range,Color(weapon.color),delay)
 			sim.spatial_sound_requested.emit("charge",origin,0.7)
-		"baton", "cleaver": melee(origin,weapon,index,source)
+		"baton": melee(origin,weapon,index,source)
 		"chain":
 			sim.feedback.shot(origin,origin.direction_to(sim.enemies[index].pos),weapon.id,source)
 			chain(origin,weapon,index,source,secondary)
 		"acid": acid(origin,weapon,index,source,secondary)
+		"sweeper": sweeper(origin,weapon,source,secondary)
+		"breach": shoot(origin,weapon,index,source,secondary)
 		"chainsaw":
 			if s.overheat > 0: return
 			s.heat += weapon.cooldown*1.22
@@ -110,16 +112,18 @@ func fire(origin: Vector2, weapon: Dictionary, index: int, source: String, secon
 				pending.append({"kind":"pistol","delay":0.16,"origin":origin,"source":source,"weapon":weapon})
 
 func melee(origin: Vector2,w: Dictionary,selected: int,source: String,follow: bool = false):
+	w.primary=selected
 	swing(origin,w,origin.direction_to(sim.enemies[selected].pos),source,follow or w.get("secondary",false))
 
 func swing(origin: Vector2,w: Dictionary,direction: Vector2,source: String,secondary: bool = false):
 	sim.feedback.shot(origin,direction,w.id,source)
 	var reach = w.range
-	var cosine = {"wrench":0.15,"baton":0.45,"cleaver":-0.15,"chainsaw":0.80}.get(w.id,0.4)
+	var cosine = {"baton":0.45,"chainsaw":0.80}.get(w.id,0.4)
 	var count = 0
 	for index in sim.grid.query(origin,reach+35):
 		var e = sim.enemies[index]
 		if not e.active or origin.distance_to(e.pos)>reach+e.radius or direction.dot(origin.direction_to(e.pos))<cosine or not sim.city.attack_clear(origin,e.pos): continue
+		if w.id in ["wrench","chainsaw"] and index != int(w.get("primary",-1)): continue
 		sim._damage(index,w.damage*(0.5 if secondary else 1.4 if w.id == "wrench" else 1.0),origin,w.id,source,secondary)
 		count += 1
 		if w.id == "baton": status(e,"stun",0.22)
@@ -129,15 +133,13 @@ func swing(origin: Vector2,w: Dictionary,direction: Vector2,source: String,secon
 		if sim.clock-state_data.last_hit>2: state_data.combo=0
 		state_data.combo += 1
 		state_data.last_hit = sim.clock
-		if w.id == "cleaver" and sim.run.has_mod("cleaver_1") and state_data.combo%2 == 0:
-			pending.append({"kind":"cleaver","delay":0.18,"origin":origin,"source":source,"weapon":w})
 		if w.id == "wrench":
 			if sim.run.has_mod("wrench_1"): cone(origin,direction,reach*1.6,0.55,w.damage*0.5,"wrench",source)
 			if sim.run.has_mod("wrench_2") and sim.build.gate("wrench_shield",4): sim.build.add_shield()
 	if not secondary and w.id == "baton":
 		if sim.run.has_mod("baton_1") and state_data.combo>0 and state_data.combo%3==0: pulse(origin,100,w.damage*0.5,origin,0.45,"baton",source,true)
 		if sim.run.has_mod("baton_2"): pending.append({"kind":"reverse","delay":0.12,"origin":origin,"source":source,"weapon":w,"direction":-direction})
-	var kind = {"wrench":"hammer","baton":"baton","cleaver":"cleaver","chainsaw":"saw"}.get(w.id,"cleaver")
+	var kind = {"wrench":"hammer","baton":"baton","chainsaw":"saw"}.get(w.id,"baton")
 	effect(kind,origin,origin+direction*reach,reach,Color(w.color),0.22)
 	sim.spatial_sound_requested.emit(kind,origin,0.72 if w.id == "chainsaw" else 1.0)
 
@@ -174,7 +176,7 @@ func shoot(origin: Vector2, w: Dictionary, selected: int, source: String, second
 	if w.id == "crossbow" and sim.run.has_mod("crossbow_2"):
 		for delay in [0.14,0.28]: pending.append({"kind":"bolt_extra","delay":delay,"origin":origin,"source":source,"weapon":w})
 
-	sim.spatial_sound_requested.emit({"book":"book","molotov":"fire","nailgun":"nail","shotgun":"shotgun","pistol":"pistol","brick":"brick","crossbow":"bow","decoy":"decoy"}.get(w.id,"shot"),origin,1.0)
+	sim.spatial_sound_requested.emit({"book":"book","molotov":"fire","nailgun":"nail","shotgun":"shotgun","pistol":"pistol","brick":"brick","breach":"charge","crossbow":"bow","decoy":"decoy"}.get(w.id,"shot"),origin,1.0)
 
 func projectile(origin: Vector2,destination: Vector2,w: Dictionary,source: String,angle: float,secondary: bool = false,excluded: Dictionary = {}):
 	var speed=maxf(1,w.speed)
@@ -299,24 +301,20 @@ func land(b: Dictionary):
 	var w=b.weapon.duplicate(true)
 	w.damage=b.damage
 	match b.id:
+		"breach":
+			var radius=b.splash
+			pulse(b.pos,radius,b.damage,b.origin,0.35,"breach",b.source,secondary)
+			if not secondary and sim.run.has_mod("breach_1"):
+				pending.append({"kind":"pulse","delay":0.45,"origin":b.pos,"radius":radius*0.65,"damage":b.damage*0.35,"id":"breach","source":b.source})
 		"molotov":
 			field(b.pos,w,b.source,"fire",b.splash,w.duration,secondary)
 			if not secondary and sim.run.has_mod("molotov_1"):
 				for offset in [-65,65]:
 					var at=b.pos+b.velocity.normalized()*offset
 					if sim.city.attack_clear(b.pos,at) and sim.city.point_free(at,0): field(at,w,b.source,"fire",65,3,secondary)
-		"brick":
-			pulse(b.pos,b.splash,b.damage,b.origin,0.3,"brick",b.source,secondary)
-			if not secondary:
-				if sim.run.has_mod("brick_2"): sim.build.magnet()
-				if sim.run.has_mod("brick_1"):
-					var excluded={}
-					for i in sim.grid.query(b.pos,b.splash): excluded[sim.enemies[i].uid]=true
-					var other=other_target(b.pos,220,excluded)
-					if other>=0: projectile(b.pos,sim.enemies[other].pos,w,b.source,b.pos.direction_to(sim.enemies[other].pos).angle(),true)
 		"decoy": field(b.pos,w,b.source,"decoy",b.splash,w.duration,secondary)
-	effect("fire_burst" if b.id=="molotov" else "sonic" if b.id=="decoy" else "brick_hit",b.pos,b.pos,b.splash,b.color,0.42)
-	sim.spatial_sound_requested.emit("brick" if b.id=="brick" else "decoy" if b.id=="decoy" else "fire",b.pos,1.0)
+	effect("fire_burst" if b.id=="molotov" else "explosion",b.pos,b.pos,b.splash,b.color,0.42)
+	sim.spatial_sound_requested.emit("explosion" if b.id=="breach" else "fire",b.pos,1.0)
 
 func pulse(origin: Vector2,radius: float,damage: float,source: Vector2,stun: float=0.0,kind: String="brick",owner: String="world",secondary: bool=false):
 	if sim.feedback.STYLES.has(kind):
@@ -377,18 +375,43 @@ func chain(origin: Vector2,w: Dictionary,selected: int,source: String="chain",se
 	sim.spatial_sound_requested.emit("arc",origin,0.75)
 
 func acid(origin: Vector2,w: Dictionary,index: int,source: String,secondary: bool=false):
-	var direction = origin.direction_to(sim.enemies[index].pos)
+	if index < 0 or not sim.enemies[index].active: return
+	var enemy=sim.enemies[index]
+	var direction = origin.direction_to(enemy.pos)
 	sim.feedback.shot(origin,direction,"acid",source)
-	for i in range(3):
-		var angle = direction.angle()+(i%3-1)*0.35
-		var end = origin+Vector2.from_angle(angle)*minf(w.range,origin.distance_to(sim.enemies[index].pos))*(0.60 if i >= 3 else 1.0)
-		var t = sim.city.wall_hit(origin,end)
-		if t != INF: end = origin.lerp(end,t).move_toward(origin,3)
-		field(end,w,source,"acid",w.splash,w.duration,secondary)
-		if sim.run.has_mod("acid_2") and not secondary:
-			for fraction in [0.35,0.65]: field(origin.lerp(end,fraction),w,source,"acid",65,3,secondary)
-		effect("acid",origin,end,w.splash,Color(w.color),0.45)
+	var end=enemy.pos
+	var t=sim.city.wall_hit(origin,end)
+	if t!=INF: end=origin.lerp(end,t).move_toward(origin,3)
+	if end.distance_to(enemy.pos)<=enemy.radius+8:
+		var duration=w.duration
+		if not secondary and sim.run.has_mod("acid_1"): duration*=1.5
+		enemy.acid_dot=maxf(enemy.get("acid_dot",0),duration)
+		enemy.acid_tick=minf(maxf(0.05,enemy.get("acid_tick",0.5)),0.5)
+		var tick_damage=w.damage*(0.5 if secondary else 0.5 if not sim.run.has_mod("acid_2") else 0.75)
+		enemy.acid_damage=maxf(enemy.get("acid_damage",0),tick_damage)
+		enemy.acid_source=source
+		enemy.acid_secondary=secondary
+		enemy.corrode=maxf(enemy.get("corrode",0),duration)
+		effect("acid",origin,end,14,Color(w.color),0.45)
 	sim.spatial_sound_requested.emit("acid",origin,0.75)
+
+func sweeper(origin: Vector2,w: Dictionary,source: String,secondary: bool=false):
+	var s=state(source)
+	s.rotations=int(s.get("rotations",0))+1
+	var radius=w.range*(1.35 if not secondary and sim.run.has_mod("sweeper_1") and s.rotations%3==0 else 1.0)
+	for index in sim.grid.query(origin,radius+25):
+		var e=sim.enemies[index]
+		if not e.active or origin.distance_to(e.pos)>radius+e.radius or not sim.city.attack_clear(origin,e.pos): continue
+		status(e,"wet",1.0)
+		sim._damage(index,w.damage,origin,"sweeper",source,secondary)
+		push(e,origin.direction_to(e.pos),7.0 if not secondary else 3.0)
+		if not secondary and sim.run.has_mod("sweeper_2") and e.get("wet",0)>0 and sim.build.gate("sweeper_arc_"+source,0.8):
+			var excluded={}
+			excluded[e.uid]=true
+			var other=other_target(e.pos,95,excluded)
+			if other>=0: sim._damage(other,w.damage*0.7,e.pos,"chain",source,true)
+	effect("water",origin,origin+Vector2.UP*radius,radius,Color(w.color),0.18)
+	sim.spatial_sound_requested.emit("water",origin,0.55)
 
 func water(origin: Vector2,w: Dictionary,index: int,source: String = "water"):
 	sim.feedback.shot(origin,origin.direction_to(sim.enemies[index].pos),w.id,source)
@@ -497,8 +520,8 @@ func draw():
 		if not b.active: continue
 		var at = b.pos-Vector2(0,15)
 		if b.weapon.lob: at.y -= sin(clampf(b.age/maxf(0.01,b.total_life),0,1)*PI)*65
-		var clip = {"book":"book_flight","brick":"brick_flight","molotov":"fire_burst","decoy":"speaker","crossbow":"bolt_flight","nailgun":"nail_flight","shotgun":"shotgun_hit","pistol":"pistol_hit"}.get(b.id,"nail_flight")
-		var size = {"book":Vector2(48,48),"brick":Vector2(37,37),"molotov":Vector2(40,40),"decoy":Vector2(43,43),"crossbow":Vector2(68,40),"nailgun":Vector2(44,24),"shotgun":Vector2(18,13),"pistol":Vector2(24,15)}.get(b.id,Vector2(32,32))
+		var clip = {"book":"book_flight","brick":"brick_flight","breach":"brick_flight","molotov":"fire_burst","decoy":"speaker","crossbow":"bolt_flight","nailgun":"nail_flight","shotgun":"shotgun_hit","pistol":"pistol_hit"}.get(b.id,"nail_flight")
+		var size = {"book":Vector2(48,48),"brick":Vector2(37,37),"breach":Vector2(37,37),"molotov":Vector2(40,40),"decoy":Vector2(43,43),"crossbow":Vector2(68,40),"nailgun":Vector2(44,24),"shotgun":Vector2(18,13),"pistol":Vector2(24,15)}.get(b.id,Vector2(32,32))
 		var phase = fposmod(b.age*2.4,1.0) if b.id not in ["shotgun","pistol"] else 0.2
 		sprite(clip,phase,at,size,b.velocity.angle())
 	for f in fx:

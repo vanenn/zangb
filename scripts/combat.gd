@@ -271,6 +271,12 @@ func _update_enemies(delta: float):
 			enemy.arrival-=delta
 			continue
 		enemy.hit = maxf(0,enemy.hit-delta)
+		if enemy.get("acid_dot",0)>0:
+			enemy.acid_dot=maxf(0,enemy.acid_dot-delta)
+			enemy.acid_tick=enemy.get("acid_tick",0.5)-delta
+			while enemy.acid_tick<=0 and enemy.acid_dot>0 and enemy.active:
+				enemy.acid_tick+=0.5
+				_damage(index,enemy.get("acid_damage",0),enemy.pos,"acid",enemy.get("acid_source","world"),enemy.get("acid_secondary",false))
 		enemy.recoil = enemy.get("recoil",Vector2.ZERO).move_toward(Vector2.ZERO,delta*70)
 		enemy.anim_stop = maxf(0,enemy.get("anim_stop",0)-delta)
 		if enemy.anim_stop <= 0: enemy.anim_clock = enemy.get("anim_clock",clock)+delta
@@ -400,10 +406,10 @@ func _update_attacks(delta: float):
 			person.cooldown = weapon.cooldown
 			person.attack = 0.17
 			person.facing = 1.0 if enemies[target].pos.x >= person.pos.x else -1.0
-			if weapon.id in ["cleaver","chainsaw"]: person.engage_time = 0.45
+			if weapon.id == "chainsaw": person.engage_time = 0.45
 		else:
 			person.cooldown = 0.14
-			if weapon.id in ["cleaver","chainsaw"]:
+			if weapon.id == "chainsaw":
 				var seek = weapon.duplicate()
 				seek.range = 245.0
 				var close = weapons.target(person.pos,seek)
@@ -597,7 +603,7 @@ func _draw_actor(at: Vector2, sprite_index: int, facing: float, moving: float, p
 			squeeze -= progress_value*0.045
 		else:
 			var snap = sin(progress_value*PI)*exp(-progress_value*1.5)
-			var heavy = pose.id in ["wrench","cleaver","baton","chainsaw"]
+			var heavy = pose.id in ["wrench","baton","chainsaw"]
 			lean += facing*snap*(0.24 if heavy else -0.11)
 			body_shift += direction*snap*(7 if heavy else -4)
 	elif attack > 0: lean += sin(attack/0.18*PI)*0.10*facing

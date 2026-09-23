@@ -1,25 +1,5 @@
 [
   {
-    "id": "book_1",
-    "weapon": "book",
-    "name": "回程点名",
-    "text": "回程再次命中",
-    "tags": [
-      "physical"
-    ],
-    "clip": "paper_hit"
-  },
-  {
-    "id": "book_2",
-    "weapon": "book",
-    "name": "侧旋书页",
-    "text": "同时投出一本侧旋书，造成50%伤害",
-    "tags": [
-      "physical"
-    ],
-    "clip": "paper_hit"
-  },
-  {
     "id": "wrench_1",
     "weapon": "wrench",
     "name": "震地重击",
@@ -80,134 +60,10 @@
     "clip": "fire_burst"
   },
   {
-    "id": "nailgun_1",
-    "weapon": "nailgun",
-    "name": "折射长钉",
-    "text": "首个命中后折射另一目标",
-    "tags": [
-      "physical"
-    ],
-    "clip": "nail_hit"
-  },
-  {
-    "id": "nailgun_2",
-    "weapon": "nailgun",
-    "name": "碎钉散射",
-    "text": "贯穿耗尽时散出三枚短钉",
-    "tags": [
-      "physical"
-    ],
-    "clip": "nail_hit"
-  },
-  {
-    "id": "shotgun_1",
-    "weapon": "shotgun",
-    "name": "独头贯穿",
-    "text": "五颗霰弹变成一枚独头弹：3.5倍单颗伤害，贯穿3人",
-    "tags": [
-      "physical"
-    ],
-    "clip": "shotgun_hit"
-  },
-  {
-    "id": "shotgun_2",
-    "weapon": "shotgun",
-    "name": "背后开火",
-    "text": "开火时向身后补射三颗霰弹",
-    "tags": [
-      "physical"
-    ],
-    "clip": "shotgun_hit"
-  },
-  {
-    "id": "pistol_1",
-    "weapon": "pistol",
-    "name": "双重点射",
-    "text": "每轮发射两次精准点射",
-    "tags": [
-      "physical",
-      "healing"
-    ],
-    "clip": "pistol_hit"
-  },
-  {
-    "id": "pistol_2",
-    "weapon": "pistol",
-    "name": "急救弹匣",
-    "text": "每四轮射击落下回复4生命的急救包；每人间隔至少4秒",
-    "tags": [
-      "physical",
-      "healing"
-    ],
-    "clip": "pistol_hit"
-  },
-  {
-    "id": "cleaver_1",
-    "weapon": "cleaver",
-    "name": "连续追刀",
-    "text": "连续两次命中后追加一刀",
-    "tags": [
-      "melee"
-    ],
-    "clip": "cleaver"
-  },
-  {
-    "id": "cleaver_2",
-    "weapon": "cleaver",
-    "name": "回身斩",
-    "text": "斩杀后追加反向横扫",
-    "tags": [
-      "melee"
-    ],
-    "clip": "cleaver"
-  },
-  {
-    "id": "brick_1",
-    "weapon": "brick",
-    "name": "跳弹砖块",
-    "text": "落地后弹向另一名敌人",
-    "tags": [
-      "physical",
-      "pickup"
-    ],
-    "clip": "brick_hit"
-  },
-  {
-    "id": "brick_2",
-    "weapon": "brick",
-    "name": "冲击回收",
-    "text": "落地冲击吸附附近掉落",
-    "tags": [
-      "physical",
-      "pickup"
-    ],
-    "clip": "brick_hit"
-  },
-  {
-    "id": "chain_1",
-    "weapon": "chain",
-    "name": "分叉电路",
-    "text": "第二跳分出一条支链；支链与主链共用12人命中上限",
-    "tags": [
-      "electric"
-    ],
-    "clip": "lightning"
-  },
-  {
-    "id": "chain_2",
-    "weapon": "chain",
-    "name": "末端放电",
-    "text": "最后一跳造成范围放电",
-    "tags": [
-      "electric"
-    ],
-    "clip": "lightning"
-  },
-  {
     "id": "acid_1",
     "weapon": "acid",
-    "name": "余压飞溅",
-    "text": "酸区消散时向外飞溅",
+    "name": "延长腐蚀",
+    "text": "酸液附着时间延长50%",
     "tags": [
       "acid"
     ],
@@ -216,8 +72,8 @@
   {
     "id": "acid_2",
     "weapon": "acid",
-    "name": "腐蚀通道",
-    "text": "喷洒路径留下连续酸带",
+    "name": "高浓配方",
+    "text": "腐蚀跳伤提高50%",
     "tags": [
       "acid"
     ],
@@ -262,46 +118,6 @@
       "physical"
     ],
     "clip": "bolt_hit"
-  },
-  {
-    "id": "decoy_1",
-    "weapon": "decoy",
-    "name": "双重回声",
-    "text": "诱饵结束时发出两次震荡",
-    "tags": [
-      "sonic"
-    ],
-    "clip": "sonic"
-  },
-  {
-    "id": "decoy_2",
-    "weapon": "decoy",
-    "name": "持续共鸣",
-    "text": "诱饵存续时周期发出音波",
-    "tags": [
-      "sonic"
-    ],
-    "clip": "sonic"
-  },
-  {
-    "id": "water_1",
-    "weapon": "water",
-    "name": "交叉水束",
-    "text": "喷射分成两束交叉水流",
-    "tags": [
-      "wet"
-    ],
-    "clip": "water_jet"
-  },
-  {
-    "id": "water_2",
-    "weapon": "water",
-    "name": "蓄压水浪",
-    "text": "连续喷射两秒推出宽浪",
-    "tags": [
-      "wet"
-    ],
-    "clip": "water_jet"
   },
   {
     "id": "pickup_stride",
@@ -364,5 +180,49 @@
       "pickup"
     ],
     "clip": "sonic"
+  },
+  {
+    "id": "sweeper_1",
+    "weapon": "sweeper",
+    "name": "外圈清道",
+    "text": "每第三次旋扫扩大半径并将近处感染者推开。",
+    "tags": [
+      "melee",
+      "wet"
+    ],
+    "clip": "water_jet"
+  },
+  {
+    "id": "sweeper_2",
+    "weapon": "sweeper",
+    "name": "积水导流",
+    "text": "旋扫命中湿润目标时向附近目标释放小型电弧。",
+    "tags": [
+      "electric",
+      "wet"
+    ],
+    "clip": "lightning"
+  },
+  {
+    "id": "breach_1",
+    "weapon": "breach",
+    "name": "延迟震荡",
+    "text": "破拆药包引爆后，短暂延迟再产生一次较小冲击。",
+    "tags": [
+      "explosive",
+      "physical"
+    ],
+    "clip": "explosion"
+  },
+  {
+    "id": "breach_2",
+    "weapon": "breach",
+    "name": "链式装药",
+    "text": "爆炸击杀感染者时，在其位置引发一次小型连爆。",
+    "tags": [
+      "explosive",
+      "fire"
+    ],
+    "clip": "explosion"
   }
 ]

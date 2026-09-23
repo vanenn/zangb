@@ -62,7 +62,7 @@ func recalculate():
 		"range":1.0,
 		"pickup":110.0,
 		"move_speed":185.0,
-		"regen":float(counts.get("nurse", 0)) * 0.18,
+		"regen":0.0,
 		"armor":0.0,
 		"fire_radius":1.0
 	}
@@ -92,16 +92,16 @@ func has_mod(id: String) -> bool:
 	return id in mods
 
 func tags() -> Array:
-	var result = ["pickup","movement","rescue"]
+	var result = ["pickup","movement","rescue","healing"]
 	for id in weapon_levels:
 		if id not in result: result.append(id)
+		for tag in content.weapons[id].get("tags",[]):
+			if tag not in result: result.append(tag)
 		for item in content.mods.values():
 			if item.weapon == id:
 				for tag in item.tags:
-					if tag == "healing" and id == "pistol" and not (counts.get("nurse",0)>0 or has_mod("pistol_2")): continue
 					if tag not in result: result.append(tag)
 	if "valve" in equipment and "acid" not in result: result.append("acid")
-	if "battery" in equipment and "electric" not in result: result.append("electric")
 	for id in mods:
 		for tag in content.mods[id].tags:
 			if tag not in result: result.append(tag)
@@ -201,11 +201,12 @@ func weapon(id: String) -> Dictionary:
 	result.range *= stats.range
 	result.splash *= stats.range
 	result.rank = rank
-	result.jumps += synergy_tier("electrician")
 	if id == "molotov": result.splash *= stats.fire_radius
 	if id == "acid": result.duration += synergy_tier("chemical_worker")*0.5
 	if id == "chainsaw": result.duration += synergy_tier("firefighter")*0.4
-	if id == "crossbow": result.penetration += synergy_tier("hunter")
+	if id == "crossbow": result.damage *= 1.0+synergy_tier("hunter")*0.12
+	if id == "sweeper": result.damage *= 1.0+synergy_tier("sanitation")*0.12
+	if id == "breach": result.splash *= 1.0+synergy_tier("demolitionist")*0.12
 
 	return result
 
@@ -213,10 +214,11 @@ func upgrade_price(id: String) -> int:
 	return int(ceil((18 + int(weapon_levels.get(id, 1)) * 12) * content.classes[class_id].upgrade_mult))
 
 func snapshot() -> Dictionary:
-	return {"version":3,"difficulty":difficulty,"mods":mods.duplicate(),"equipment":equipment.duplicate(),"rerolls":rerolls,"choices":choices.duplicate(),"pending_levels":pending_levels,"equipment_choices":equipment_choices.duplicate(),"equipment_return":equipment_return,"first_core":first_core,"map_state":map_state.duplicate(true),"class_id":class_id,"map_id":map_id,"wave":wave,"supplies":supplies,"health":health,"level":level,"xp":xp,"kills":kills,"rescued":rescued,"spent":spent,"roster":roster.duplicate(),"weapon_levels":weapon_levels.duplicate(),"perks":perks.duplicate(),"offers":offers.duplicate(true),"shop_serial":shop_serial,"refreshes":refreshes,"elapsed_total":elapsed_total,"rng_state":str(rng.state),"rng_seed":str(rng.seed),"run_id":run_id,"checkpoint_position":checkpoint_position.duplicate()}
+	return {"version":4,"difficulty":difficulty,"mods":mods.duplicate(),"equipment":equipment.duplicate(),"rerolls":rerolls,"choices":choices.duplicate(),"pending_levels":pending_levels,"equipment_choices":equipment_choices.duplicate(),"equipment_return":equipment_return,"first_core":first_core,"map_state":map_state.duplicate(true),"class_id":class_id,"map_id":map_id,"wave":wave,"supplies":supplies,"health":health,"level":level,"xp":xp,"kills":kills,"rescued":rescued,"spent":spent,"roster":roster.duplicate(),"weapon_levels":weapon_levels.duplicate(),"perks":perks.duplicate(),"offers":offers.duplicate(true),"shop_serial":shop_serial,"refreshes":refreshes,"elapsed_total":elapsed_total,"rng_state":str(rng.state),"rng_seed":str(rng.seed),"run_id":run_id,"checkpoint_position":checkpoint_position.duplicate()}
 
 func restore(data: Dictionary) -> bool:
-	if int(data.get("version",0)) != 3 or not content.classes.has(data.get("class_id", "")):
+	data = _migrate_snapshot(data)
+	if int(data.get("version",0)) != 4 or not content.classes.has(data.get("class_id", "")):
 		return false
 	if not _valid_checkpoint(data):
 		return false
@@ -247,6 +249,37 @@ func restore(data: Dictionary) -> bool:
 	recalculate()
 	health = clampf(health, 1, stats.max_health)
 	return true
+
+func _migrate_snapshot(source: Dictionary) -> Dictionary:
+	if int(source.get("version",0)) != 3:
+		return source
+	var data = source.duplicate(true)
+	var people = {"chemist":"chemical_worker","repairer":"demolitionist","officer":"sanitation","nurse":"sanitation","chef":"firefighter","courier":"demolitionist","electrician":"sanitation","sound_tech":"chemical_worker"}
+	var weapons_map = {"book":"molotov","nailgun":"breach","shotgun":"baton","pistol":"acid","cleaver":"wrench","brick":"breach","chain":"sweeper","decoy":"molotov","water":"sweeper"}
+	var mapped_roster = []
+	for id in data.get("roster",[]):
+		var mapped = people.get(id,id)
+		if content.survivors.has(mapped): mapped_roster.append(mapped)
+	data.roster = mapped_roster
+	var mapped_levels = {}
+	for id in data.get("weapon_levels",{}):
+		var mapped = weapons_map.get(id,id)
+		if not content.weapons.has(mapped): continue
+		mapped_levels[mapped] = mini(5,maxi(int(mapped_levels.get(mapped,1)),int(data.weapon_levels[id])))
+	if not mapped_levels.has(content.classes[data.get("class_id","teacher")].weapon):
+		mapped_levels[content.classes[data.class_id].weapon] = 1
+	data.weapon_levels = mapped_levels
+	data.mods = data.get("mods",[]).filter(func(id): return content.mods.has(id))
+	data.choices = data.get("choices",[]).filter(func(id): return content.mods.has(id) or id in ["aid","supply","refresh"])
+	for offer in data.get("offers",[]):
+		if offer.get("kind","") == "person":
+			offer.id = people.get(offer.get("id",""),offer.get("id",""))
+			if not content.survivors.has(offer.id): offer.id = "sanitation"
+		elif offer.get("kind","") == "weapon":
+			offer.id = weapons_map.get(offer.get("id",""),offer.get("id",""))
+			if not content.weapons.has(offer.id): offer.id = content.classes[data.class_id].weapon
+	data.version = 4
+	return data
 
 func _valid_checkpoint(data: Dictionary) -> bool:
 	if not data.get("map_state",{}) is Dictionary: return false

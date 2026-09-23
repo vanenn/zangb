@@ -27,7 +27,7 @@
   {
     "id": "coolant",
     "name": "冷却循环罐",
-    "text": "水流命中使附近电锯散热",
+    "text": "清障刷命中使附近救援电锯散热",
     "requires": [
       "wet",
       "chainsaw"
@@ -106,10 +106,9 @@
   {
     "id": "fuse",
     "name": "延时引信",
-    "text": "砖块命中燃烧目标产生爆燃",
+    "text": "破拆药包命中燃烧目标产生爆燃",
     "requires": [
-      "brick",
-      "fire"
+      "explosive"
     ],
     "tags": [
       "fire",

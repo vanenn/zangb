@@ -18,10 +18,10 @@
       1800
     ],
     "affinity": [
-      "electrician",
-      "nurse",
-      "sound_tech",
-      "chemist"
+      "chemical_worker",
+      "sanitation",
+      "demolitionist",
+      "firefighter"
     ],
     "tactical": [
       {
@@ -177,10 +177,10 @@
       1800
     ],
     "affinity": [
+      "demolitionist",
       "firefighter",
       "sanitation",
-      "repairer",
-      "courier"
+      "hunter"
     ],
     "tactical": [
       {
@@ -321,10 +321,10 @@
       1800
     ],
     "affinity": [
-      "chemical_worker",
       "hunter",
-      "officer",
-      "chef"
+      "chemical_worker",
+      "demolitionist",
+      "firefighter"
     ],
     "tactical": [
       {

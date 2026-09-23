@@ -3,7 +3,7 @@ extends RefCounted
 var directory = "user://"
 var last_error = ""
 var settings = {"volume":0.45,"shake":true,"flash":true,"blood":true,"fullscreen":false}
-var meta = {"version":1,"runs":0,"wins":0,"best_kills":0,"best_team":0,"best_wave":0,"unlocked":["repairer","officer","nurse","courier"],"seen":[],"finished_ids":[],"history":[]}
+var meta = {"version":1,"runs":0,"wins":0,"best_kills":0,"best_team":0,"best_wave":0,"unlocked":["firefighter","sanitation","hunter","chemical_worker","demolitionist"],"seen":[],"finished_ids":[],"history":[]}
 
 func _init(path: String = "user://"):
 	directory=path
@@ -32,7 +32,7 @@ func _init(path: String = "user://"):
 	for key in meta:
 		if saved_meta.has(key): meta[key]=saved_meta[key]
 	meta.version=3
-	meta.unlocked=["chemist","repairer","officer","nurse","chef","courier","electrician","chemical_worker","firefighter","hunter","sound_tech","sanitation"]
+	meta.unlocked=["firefighter","sanitation","hunter","chemical_worker","demolitionist"]
 	meta.difficulties=saved_meta.get("difficulties",{"easy":{"runs":0,"wins":0},"challenge":{"runs":0,"wins":0}})
 	for key in ["runs","wins","best_kills","best_team","best_wave"]: meta[key]=int(meta[key])
 
